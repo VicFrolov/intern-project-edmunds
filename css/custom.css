@@ -92,6 +92,9 @@
     font-size: 20px;
 }
 
+#container-search {
+    overflow: hidden;
+}
 
 /* navbar */
 

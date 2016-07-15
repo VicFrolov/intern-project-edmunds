@@ -8,10 +8,14 @@ $(document).ready(function(){
     $("#trigger").click(function(){
         console.log('trigger works')
 
-        $ct.children(".content:first").animate({ "margin-left": "-800px" }, "slow", function(){
-            console.log("lol")
-            $(this).remove();
-        });
+        $('#content1, #content2').animate({width: '0px'}, 1000, function() {
+                    $(this).hide();
+                    $('#content1, #content2').animate({width: '573px'}, 1000, function() {
+                            $(this).show();
+                        }
+                    );
+                }
+            );
     });
 
 });
