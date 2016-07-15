@@ -125,18 +125,26 @@
 #slider{
   position:absolute;
   left:0;
-  height:700px;  
+  /*height:700px;*/  
   text-align:center; /* to reset text inside slides */
 }
 
-#slider > div {
+#slider > div.hor {
   position:relative;
   float:left;
   width:1150px;
   height:700px;
 }
 
-#prev, #next{
+#slider > div.vert {
+    position:initial;
+    display:block;
+    float:left;
+    width:1150px;
+    height:700px;
+}
+
+#prev, #next, #up, #down{
   display:inline-block;
   position:relative;
   top:600px;
@@ -149,7 +157,6 @@
 /* navbar */
 
 #logo {
-
     width: 50%;
     height:50%;
 }
