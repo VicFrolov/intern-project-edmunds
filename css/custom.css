@@ -87,51 +87,48 @@
 
 
 #gallery{
-  position:relative;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 1150px;
-  width: 90%;
-  height: 690px; /* +30 = space for buttons */
-  text-align: center; /* to center the buttons */
+    position:relative;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1150px;
+    width: 90%;
+    height: 690px; /* +30 = space for buttons */
+    text-align: center; /* to center the buttons */
 
 }
 
 #slider {
-  position: absolute;
-  left: 0;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    left: 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #slider > .horizontal-section {
-  position: relative;
-  float: left;
-  width: 1150px;
-  height: 700px;
+    position: relative;
+    float: left;
+    width: 1150px;
+    height: 700px;
 }
 
 #slider > .vertical-section {
-  position: inline;
-  width: 1150px;
-  height: 700px;
+    position: inline;
+    width: 1150px;
+    height: 700px;
 }
 
 
 #prev, #next, #down, #up {
-  display:inline-block;
-  position:relative;
-  top:600px;
-  cursor:pointer;
-  padding:5px;
+    display:inline-block;
+    position:relative;
+    top:600px;
+    cursor:pointer;
+    padding:5px;
 }
-
-
 
 /* navbar */
 
 #logo {
-
     width: 50%;
     height:50%;
 }
@@ -149,6 +146,4 @@ nav ul a {
 
 nav ul {
     margin-right: 8.5%;
-
 }
-
