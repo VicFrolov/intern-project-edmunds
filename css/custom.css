@@ -85,33 +85,6 @@
     font-size: 20px;
 }
 
-/*#container-research {
-  position:relative;
-  margin: 0 auto;
-  overflow:hidden;
-  width:500px;
-  height:330px; 
-  text-align:center; 
-}
-
-#content {
-  position:absolute;
-  left:0;
-  height:300px;  
-  text-align:left; 
-}
-
-#content > div {
-  position:relative;
-  float:left;
-  width:500px;
-  height:300px;
-}
-
-#prev, #next{
-
-  background-color: #fff;
-}*/
 
 #gallery{
   position:relative;
@@ -120,6 +93,7 @@
   width:1150px;
   height:700px; /* +30 = space for buttons */
   text-align:center; /* to center the buttons */
+
 }
 
 #slider{
@@ -134,6 +108,8 @@
   float:left;
   width:1150px;
   height:700px;
+  background-color: rgba(255, 255, 255, 0.9);
+
 }
 
 #slider > div.vert {
