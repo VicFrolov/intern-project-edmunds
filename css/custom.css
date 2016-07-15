@@ -1,0 +1,124 @@
+/*home page*/
+
+#homepage-buttons {
+    text-align: center;
+    margin-top: 400px;
+}
+
+.slider.fullscreen {
+    position: fixed;
+}
+
+#left-button {
+    background-color: #007EE5;
+    height: 55px;
+    line-height: 55px;
+    width: 200px;
+    font-size: 20px;
+    margin-right: 60px;
+
+}
+
+#left-button:hover {
+    background-color: #2B9DFC;
+}
+
+#right-button {
+    background-color: #88C057;
+    height: 55px;
+    line-height: 55px;
+    width: 200px;
+    font-size: 20px;
+}
+
+#right-button:hover {
+    background-color: #B4E38B;
+}
+
+.btn:hover, .btn-large:hover {
+    background-color: #009fff;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #007EE5;
+}
+
+.slider .indicators .indicator-item.active:nth-last-child(2) {
+    background-color: #ff0000;
+}
+
+.slider .indicators .indicator-item.active:nth-last-child(1) {
+    background-color: #88C057;
+}
+
+
+/* Research page */
+
+#research-body {
+    background-image: url("../img/car-bg-1.jpg");
+}
+
+.card-panel {
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+#research-buttons {
+    text-align: center;
+}
+
+#research-buttons a {
+    margin-top:30px;
+}
+
+
+#personalized-button {
+    background-color: #007EE5;
+    height: 130px;
+    width: 700px;
+    line-height: 130px;
+    font-size: 25px;
+}
+
+#mmy-button {
+    background-color: #ffffff;
+    color: #007EE5;
+    height: 70px;
+    width: 300px;
+    line-height: 70px;
+    font-size: 20px;
+}
+
+
+
+/* navbar */
+
+#logo {
+
+    width: 50%;
+    height:50%;
+}
+
+nav .brand-logo.center {
+    top: 10%;
+    left: 14.5%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+nav ul a {
+    color: #007EE5;
+}
+
+nav ul {
+    margin-right: 8.5%;
+
+}
+
+
+
+
+
