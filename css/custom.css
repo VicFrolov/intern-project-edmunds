@@ -58,13 +58,6 @@
     background-image: url("../img/car-bg-1.jpg");
 }
 
-.card-panel {
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 700px;
-    background-color: rgba(255, 255, 255, 0.9);
-
-}
 
 #research-buttons {
     text-align: center;
@@ -92,9 +85,66 @@
     font-size: 20px;
 }
 
-#container-search {
-    overflow: hidden;
+/*#container-research {
+  position:relative;
+  margin: 0 auto;
+  overflow:hidden;
+  width:500px;
+  height:330px; 
+  text-align:center; 
 }
+
+#content {
+  position:absolute;
+  left:0;
+  height:300px;  
+  text-align:left; 
+}
+
+#content > div {
+  position:relative;
+  float:left;
+  width:500px;
+  height:300px;
+}
+
+#prev, #next{
+
+  background-color: #fff;
+}*/
+
+#gallery{
+  position:relative;
+  margin: 0 auto;
+  overflow:hidden;
+  width:1150px;
+  height:700px; /* +30 = space for buttons */
+  text-align:center; /* to center the buttons */
+}
+
+#slider{
+  position:absolute;
+  left:0;
+  height:700px;  
+  text-align:center; /* to reset text inside slides */
+}
+
+#slider > div {
+  position:relative;
+  float:left;
+  width:1150px;
+  height:700px;
+}
+
+#prev, #next{
+  display:inline-block;
+  position:relative;
+  top:600px;
+  cursor:pointer;
+  padding:5px;
+}
+
+
 
 /* navbar */
 
