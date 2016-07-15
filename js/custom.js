@@ -17,7 +17,7 @@ $(document).ready(function(){
     }); 
 
     var H = $('#gallery').height(),
-        N2 = 2, //how many vertical cards are there
+        N2 = 3, //how many vertical cards are there
         C2 = 0; //which card is currently selected
 
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
       // C2 = (this.id='down' ? ++C2 : --C2) <0 ? N2-1 : C2%N2;
       if(this.id=='down') {
         ++C2;
-        if (C2 > N2) {C2 = 0; $sli.stop().animate({top: 0}, 500);}
+        if (C2 >= N2) {C2 = 0; $sli.stop().animate({top: 0}, 500);}
         else {$sli.stop().animate({top: -C2*H}, 500);}
         //alert('moving downwards');
       } else {
