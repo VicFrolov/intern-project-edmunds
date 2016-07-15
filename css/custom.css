@@ -91,7 +91,7 @@
   margin: 0 auto;
   overflow:hidden;
   width:1150px;
-  height:700px; /* +30 = space for buttons */
+  height:730px; /* +30 = space for buttons */
   text-align:center; /* to center the buttons */
 
 }
@@ -106,8 +106,8 @@
 #slider > div {
   position:relative;
   float:left;
-  width:1150px;
-  height:700px;
+  width: 1150px;
+  height: 700px;
   background-color: rgba(255, 255, 255, 0.9);
 
 }
