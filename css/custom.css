@@ -1,3 +1,26 @@
+.container #container-research {
+    /*width: 100px;
+    height: 100px;
+    */
+    width:1000px;
+    height:500px;
+    background-color: #0066CC;
+    overflow: hidden;
+}
+
+.content {
+    /*
+    width: 96px;
+    height: 96px;
+    border: solid 2px #333333;
+    */
+    width:1000px;
+    height:500px;
+    margin-left: -20px;
+    float: left;
+}
+
+
 /*home page*/
 
 #homepage-buttons {
