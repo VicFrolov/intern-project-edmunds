@@ -1,5 +1,21 @@
 /*home page*/
 
+#nav-home {
+    position: absolute;
+    z-index:2;
+    margin-top: -400px;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+#nav-home:hover {
+    background-color: rgba(255, 255, 255, 1.0);
+}
+
 #homepage-buttons {
     text-align: center;
     margin-top: 400px;
@@ -55,7 +71,14 @@
 /* Research page */
 
 #research-body {
+    opacity: 1;
+    transition: 1s opacity;
     background-image: url("../img/car-bg-1.jpg");
+}
+
+#research-body.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
 
@@ -86,7 +109,7 @@
 }
 
 
-#gallery{
+#gallery {
     position:relative;
     margin: 0 auto;
     overflow: hidden;

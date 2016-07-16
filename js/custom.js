@@ -1,4 +1,5 @@
 $(document).ready(function(){    
+    $('body').removeClass('fade-out');
     $('.slider').slider({full_width: true});
 
     var $gal = $('#gallery');
@@ -13,16 +14,33 @@ $(document).ready(function(){
     $sli.width(WIDTH * horizontalSections);
     $sli.height(HEIGHT * verticalSections);
 
-    $('#prev, #next').click(function() {
-        horizontalCounter = (this.id === 'next' ? ++horizontalCounter : --horizontalCounter) < 0 ? 
-            horizontalSections - 1 : horizontalCounter%horizontalSections;
+    $('#prev, #next, #personalized-button').click(function() {
+        if (this.id === 'personalized-button' || this.id === 'next') {
+            horizontalCounter += 1;
+        } else {
+            horizontalCounter -= 1;
+        }
+
+        if (horizontalCounter >= horizontalSections) {
+            horizontalCounter = 0;
+        }
+
         $sli.stop().animate({left: - (horizontalCounter * WIDTH) }, 400);
     });  
 
     $('#up, #down').click(function() {
-        verticalCounter = (this.id === 'down' ? ++verticalCounter : --verticalCounter) < 0 ? 
-            verticalSections - 1 : verticalCounter % verticalSections;
+        if (this.id === 'mmy-button' || this.id === "down") {
+            verticalCounter += 1;
+        } else {
+            verticalCounter -= 1;
+        }
+
+        if (verticalCounter >= verticalSections) {
+            verticalCounter = 0;
+        }
+
         $sli.stop().animate({top: - (verticalCounter * HEIGHT) }, 400);
     });
+    
 
 });
