@@ -141,12 +141,24 @@
 }
 
 
-#prev, #next, #down, #up {
-    display:inline-block;
-    position:relative;
-    top:600px;
-    cursor:pointer;
-    padding:5px;
+#prev, #up {
+    position: relative;
+    margin-right: 35%;
+    margin-top: 3%;
+    background-color: #007EE5;
+
+}
+
+#next, #down {
+    position: relative;
+    margin-left: 35%;
+    margin-top: 3%;
+    background-color: #007EE5;
+
+}
+
+#research-container {
+    margin-top: 7%;
 }
 
 /* navbar */
