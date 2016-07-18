@@ -28,7 +28,7 @@ $(document).ready(function(){
         $sli.stop().animate({left: - (horizontalCounter * WIDTH) }, 400);
     });  
 
-    $('#up, #down').click(function() {
+    $('#up, #down, #mmy-button').click(function() {
         if (this.id === 'mmy-button' || this.id === "down") {
             verticalCounter += 1;
         } else {
