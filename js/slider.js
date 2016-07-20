@@ -62,7 +62,7 @@
 
     });    
 
-    $("#down").click(function() {
+    $("#down, .steve_makes, .steve_models").click(function() {
         var gallery_height = $("#gallery").height();
         vertical_shifts += 1;
         if (vertical_shifts === number_of_vertical_slides) {

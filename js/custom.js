@@ -41,6 +41,16 @@ $(document).ready(function(){
 
         $sli.stop().animate({top: - (verticalCounter * HEIGHT) }, 400);
     });
+
+    /*Steve*/
+    $(".steve_makes").click(function() {
+        $(this).attr('class', 'steve_makes_selected');
+    });
+    $(".steve_models").click(function() {
+        $(this).attr('class', 'steve_models_selected');
+    });
+
+
     
 
 });
