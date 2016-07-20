@@ -141,6 +141,36 @@ html, body {
     margin: 0% 0% 5% 0%;
 }
 
+#research-container {
+    margin-top: 5%;
+}
+
+.back-button {
+    background-color: #007EE5;
+    height: 55px;
+    line-height: 55px;
+    width: 200px;
+    font-size: 20px;
+    margin-right: 60px;
+}
+
+.next-button {
+    background-color: #88C057;
+    height: 55px;
+    line-height: 55px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.back-button:hover {
+    background-color: #2B9DFC;
+
+}
+
+.next-button:hover {
+    background-color: #B4E38B;
+}
+
 #t2 {
     width: 29%;
     height: 100%;

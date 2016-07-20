@@ -10,7 +10,7 @@
     var total_vertical_movement = 0;
 
 
-    $("#right, #personalized-button").click(function() {
+    $(".next-button, #personalized-button").click(function() {
         var gallery_width = $("#gallery").width();
         horizontal_shifts += 1;
         
@@ -27,7 +27,7 @@
     });
    
  
-    $("#left").click(function() {
+    $(".back-button").click(function() {
         var gallery_width = $("#gallery").width();
         horizontal_shifts -= 1;
 
