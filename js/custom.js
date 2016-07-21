@@ -1,4 +1,4 @@
-$(document).ready(function(){    
+$(document).ready(function(){
     $('body').removeClass('fade-out');
     $('.slider').slider({full_width: true});
 
@@ -50,7 +50,7 @@ $(document).ready(function(){
         $(this).attr('class', 'steve_models_selected');
     });
 
-
-    
-
+    $(".research-categories").click( function() {
+        $(this).toggleClass("clicked");
+    })
 });
