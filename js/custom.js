@@ -2,41 +2,53 @@ $(document).ready(function(){
     $('body').removeClass('fade-out');
     $('.slider').slider({full_width: true});
 
-    var $gal = $('#gallery'),
-        $sli = $('#slider'),
-        $box = $('div',$sli),
-        W    = $gal.width(), // 500
-        N    = 3,//$box.length,  // 3
-        C    = 0;            // a counter
+    var $gal = $('#gallery');
+    var $sli = $('#slider');
+    var horizontalSections = $('div.horizontal-section').length;
+    var verticalSections = $('div.vertical-section').length;
+    var WIDTH = $gal.width();
+    var HEIGHT = $gal.height();
+    var horizontalCounter = 0;
+    var verticalCounter = 0;
 
-    $sli.width(W*N);
+    $sli.width(WIDTH * horizontalSections);
+    $sli.height(HEIGHT * verticalSections);
 
-    $('#prev, #next').click(function(){
-      C = (this.id=='next' ? ++C : --C) <0 ? N-1 : C%N;
-      $sli.stop().animate({left: -C*W },900);
-    }); 
+    $('#prev, #next, #personalized-button').click(function() {
+        if (this.id === 'personalized-button' || this.id === 'next') {
+            horizontalCounter += 1;
+        } else {
+            horizontalCounter -= 1;
+        }
 
-    var H = $('#gallery').height(),
-        N2 = 3, //how many vertical cards are there
-        C2 = 0; //which card is currently selected
+        if (horizontalCounter >= horizontalSections) {
+            horizontalCounter = 0;
+        }
 
+        $sli.stop().animate({left: - (horizontalCounter * WIDTH) }, 400);
+    });  
 
-    $sli.height(H*N2)
+    $('#up, #down, #mmy-button').click(function() {
+        if (this.id === 'mmy-button' || this.id === "down") {
+            verticalCounter += 1;
+        } else {
+            verticalCounter -= 1;
+        }
 
-    $('#up, #down').click(function(){
-      // C2 = (this.id='down' ? ++C2 : --C2) <0 ? N2-1 : C2%N2;
-      if(this.id=='down') {
-        ++C2;
-        if (C2 >= N2) {C2 = 0; $sli.stop().animate({top: 0}, 500);}
-        else {$sli.stop().animate({top: -C2*H}, 500);}
-        //alert('moving downwards');
-      } else {
-        --C2;
-        if (C2 < 0) {C2 = 0; $sli.stop().animate({top: 0}, 500);}
-        else {$sli.stop().animate({top: C2*H}, 500);}
-      }
+        if (verticalCounter >= verticalSections) {
+            verticalCounter = 0;
+        }
+
+        $sli.stop().animate({top: - (verticalCounter * HEIGHT) }, 400);
     });
 
+    /*Steve*/
+    $(".steve_makes").click(function() {
+        $(this).attr('class', 'steve_makes_selected');
+    });
+    $(".steve_models").click(function() {
+        $(this).attr('class', 'steve_models_selected');
+    });
 
     $(".research-categories").click( function() {
         $(this).toggleClass("clicked");
