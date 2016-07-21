@@ -171,6 +171,29 @@ html, body {
     background-color: #B4E38B;
 }
 
+.research-categories {
+/*    background-color: #939393;
+*/  
+    background-color: #ffffff;
+    color: #2B9DFC;  
+    width: 100%;
+    height: 80px;
+    line-height: 30px;
+    margin-bottom: 15%;
+}
+
+.research-categories:hover {
+    color: #fff;
+    background-color: #007EE5;
+}
+
+.research-categories.clicked {
+    background-color: #007EE5;
+    color: #ffffff;
+}
+
+/*research-right hand size for car display */
+
 #t2 {
     width: 29%;
     height: 100%;

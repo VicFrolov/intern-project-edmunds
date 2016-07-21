@@ -1,6 +1,6 @@
 (function() {
 
-    var animation_speed = 800;
+    var animation_speed = 600;
     var number_of_horizontal_slides = $("div.horizontal-section").length;
     var number_of_vertical_slides = $("div.vertical-section").length;
 
