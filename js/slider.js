@@ -44,7 +44,7 @@
     });
 
 
-    $("#up").click(function() {
+    $("#up, .up-button").click(function() {
         var gallery_height = $("#gallery").height();
         vertical_shifts -= 1;
         if (vertical_shifts < -1) {
@@ -62,7 +62,7 @@
 
     });    
 
-    $("#down, .steve_makes, .steve_models, #mmy-button").click(function() {
+    $("#down, .steve_makes, .steve_models, #mmy-button, .down-button").click(function() {
         var gallery_height = $("#gallery").height();
         vertical_shifts += 1;
         if (vertical_shifts === number_of_vertical_slides) {

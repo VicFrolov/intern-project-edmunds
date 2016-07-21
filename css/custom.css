@@ -145,7 +145,7 @@ html, body {
     margin-top: 5%;
 }
 
-.back-button {
+.back-button, .up-button {
     background-color: #007EE5;
     height: 55px;
     line-height: 55px;
@@ -154,7 +154,7 @@ html, body {
     margin-right: 60px;
 }
 
-.next-button {
+.next-button, .down-button {
     background-color: #88C057;
     height: 55px;
     line-height: 55px;

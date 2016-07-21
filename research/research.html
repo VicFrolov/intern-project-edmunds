@@ -76,8 +76,8 @@
         <!-- 1. Select MAKE -->
         <div class="vertical-section">
           <div class="row">
-            <div class="col">
-              <h4 style="margin:25px">Select a make:</h4>
+            <div class="col m12" style="text-align:center">
+              <h4 style="margin:25px">Select A Make</h4>
             </div>
           </div>
           <div class="row">
@@ -158,13 +158,19 @@
               </div>
             </div>
           </div>
+          <div class="row" style="margin-top:35px">
+            <div class="col m12" style="text-align:center">
+              <a class="waves-effect waves-light btn up-button">Back</a>
+              <a class="waves-effect waves-light btn down-button">Next</a>
+            </div>
+          </div>
         </div>
         <!-- END Select MAKE -->
         <!-- 2. Select MODEL -->
         <div class="vertical-section">
           <div class="row">
-            <div class="col">
-              <h4 style="margin:25px">Select a model:</h4>
+            <div class="col m12" style="text-align:center">
+              <h4 style="margin:25px">Select A Model</h4>
             </div>
           </div>
           <div class="row">
@@ -239,6 +245,12 @@
               </div>
             </div>
           </div>
+          <div class="row" style="margin-top:35px">
+            <div class="col m12" style="text-align:center">
+              <a class="waves-effect waves-light btn up-button">Back</a>
+              <a class="waves-effect waves-light btn down-button">Next</a>
+            </div>
+          </div>
 
         </div>
         <!-- END Select MODEL -->
@@ -246,41 +258,36 @@
         <script type="text/javascript" src="../js/nouislider.js"></script>
         <div class="vertical-section">
           <div class="row">
-            <div class="col">
-              <h4 style="margin:25px">Select a year:</h4>
+            <div class="col m12" style="text-align:center">
+              <h4 style="margin:25px">Select A Year</h4>
             </div>
           </div>
           <div class="row">
-            <div class="col">
-              <span id="selected_year"></span>
+            <div class="col m8 offset-m2" style="text-align:center">
+              <div id="test5"></div>
+              <script>
+              var slider = document.getElementById('test5');
+              noUiSlider.create(slider, {
+               start: [1989, 2017],
+               connect: true,
+               step: 1,
+               range: {
+                 'min': 1989,
+                 'max': 2017
+               },
+               format: wNumb({
+                 decimals: 0
+               })
+             });
+              </script>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-            <div id="test5" style="margin:50px 75px;width:500px;"></div>
-            <script>
-            var slider = document.getElementById('test5');
-            noUiSlider.create(slider, {
-             start: [1989, 2017],
-             connect: true,
-             step: 1,
-             range: {
-               'min': 1989,
-               'max': 2017
-             },
-             format: wNumb({
-               decimals: 0
-             })
-           });
-            </script>
+          <div class="row" style="margin-top:125px">
+            <div class="col m12" style="text-align:center">
+              <a class="waves-effect waves-light btn up-button">Back</a>
+              <a class="waves-effect waves-light btn down-button">Next</a>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <button style="margin-right:50px;float:right;" class="back_button">Go Back</button>
-            </div>
-          </div>
-        </div>
         <!-- END Select YEAR -->
 
       <div id="t2">
