@@ -1,55 +1,87 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="../css/custom.css"  media="screen,projection"/>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../css/custom.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-
-    <body id="research-body">
-      <nav>
-        <div class="nav-wrapper white">
-          <a href="../index.html" class="brand-logo center"><img src="../img/logo.jpg" id="logo"/></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-            <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-            <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <div id="gallery">
-        <div id="slider">
-           
-           <div style="background:#fff" class="hor">  
-            <h2>How would you like to find your car?</h2>           
-            <span id="research-buttons">
-              <a class="waves-effect waves-light btn-large" id="personalized-button">Personalized Search</a>
-              <br>
-              <a class="waves-effect waves-light btn-large" id="mmy-button">Make/Model/Year</a>
-            </span>
-           </div>
-
-           <div style="background:#ada" class="hor">2</div>
-           <div style="background:#b0b" class="hor">3</div>
-
-           <div style="background:#333" class="vert">A1</div><br>
-           <div style="background:#666" class="vert">A2</div>
-        </div>
-        <span id="prev">&#9664;</span>
-        <span id="next">&#9654;</span>
-        <span id="down">down</span>
-        <span id="up">up</span>
+  <body id="research-body">
+    <script>document.body.className += ' fade-out';</script>
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="../index.html" class="brand-logo left"><img src="../img/logo.png" id="logo"/></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+          <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+          <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+          <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+        </ul>
       </div>
+    </nav>
 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="../js/materialize.min.js"></script>
-      <script type="text/javascript" src="../js/custom.js"></script>
-    </body>
-  </html>
+    <div id="shell">
+      <div id="gallery">
+      <!-- Horiztonal Section -->
+        <div class="horizontal-section">
+          <h3>How would you like to find your car?</h3> 
+            <a class="waves-effect waves-light btn-large" id="personalized-button">Personalized Search</a>
+            <br>
+            <a class="waves-effect waves-light btn-large" id="mmy-button">Make/Model/Year</a>
+        </div>
+        <div class="horizontal-section">
+          <h3>Select a Type of Car </h3>
+          <div class="container" id="research-container">
+            <div class="row">
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Alternatives.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Compacts.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Convertibles.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Coupes.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Luxury.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Sedans.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Sport.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/SUVs.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Trucks.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Vans.png"/></div>
+              <div class="col s3"><img class="responsive-img" src="../img/car-types/Wagons.png"/></div>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn back-button">Back</a>
+          <a class="waves-effect waves-light btn next-button">Next</a>          
+        </div>
+        <div class="horizontal-section">
+          <h3>What's important to you</h3>
+          <div class="container" id="research-container">
+            <div class="row">
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Gas Mileage</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Heated Seats</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Acceleration</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Handling</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Comfort</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">High Tech</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Leather Seats</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Sound System</a></div>
+              <div class="col s4"><a class="waves-effect waves-light btn research-categories">Don't Care</a></div>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn back-button">Back</a>
+          <a class="waves-effect waves-light btn next-button">Next</a>          
+        </div>
+        <div class="horizontal-section">Fourth Horizontal Div</div>
+
+        <!-- Vertical Section -->
+        <div class="vertical-section">First Vertical Div</div>
+        <div class="vertical-section">Second Vertical Div</div>
+        <div class="vertical-section">Third Vertical Div</div>
+      </div>
+      <div id="t2">
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+    <script type="text/javascript" src="../js/slider.js"></script>
+  </body>
+</html>

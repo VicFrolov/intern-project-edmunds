@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    $('body').removeClass('fade-out');
     $('.slider').slider({full_width: true});
 
     var $gal = $('#gallery'),
@@ -38,4 +38,7 @@ $(document).ready(function(){
     });
 
 
+    $(".research-categories").click( function() {
+        $(this).toggleClass("clicked");
+    })
 });

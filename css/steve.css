@@ -1,0 +1,22 @@
+div.steve_makes {
+	-webkit-filter: grayscale(25%); /* Chrome, Safari, Opera */
+    filter: grayscale(25%);
+}
+
+div.steve_makes:hover {
+	cursor:pointer;
+}
+
+div.steve_makes_selected {
+	border: 3px solid #0089ec;
+	border-radius:5px;
+}
+
+div.steve_models:hover {
+	cursor:pointer;
+}
+
+div.steve_models_selected {
+	border: 3px solid #0089ec;
+	border-radius:5px;
+}
