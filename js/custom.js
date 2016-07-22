@@ -29,12 +29,13 @@ $(document).ready(function(){
     });
 
     var sedan_car_list =  {
-        328i: {
+        bmw328i : {
             image: "../328i.jpg",
             safety: "A",
             comfort: "A"
         },
-        528i: {
+
+        bmw528i : {
             image: "../528i.jpg",
             safety: "A",
             comfort: "A"
