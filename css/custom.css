@@ -78,7 +78,7 @@ html, body {
 #research-body {
     opacity: 1;
     transition: 1s opacity;
-    background-image: url("../img/car-bg-1.jpg");
+    background-image: url("../img/car-bg-4.jpg");
 }
 
 #research-body.fade-out {
@@ -194,13 +194,18 @@ html, body {
 
 /*research-right hand size for car display */
 
-#t2 {
+#car-panel {
     width: 29%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     float: left;
     border-radius: 5px;
     margin-left: 1%;
+}
+
+.car-row {
+    height: 10%;
+    border-bottom-style: solid;
 }
 
 /* navbar */
