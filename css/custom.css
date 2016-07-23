@@ -8,7 +8,6 @@ html, body {
 #nav-home {
     position: absolute;
     z-index:2;
-    margin-top: -400px;
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-transition: background 0.5s linear;
     -moz-transition: background 0.5s linear;
@@ -23,11 +22,15 @@ html, body {
 
 #homepage-buttons {
     text-align: center;
-    margin-top: 400px;
+    position: absolute;
+    z-index: 2;
+    top: 60%;
+    left: 33%;
 }
 
 .slider.fullscreen {
     position: fixed;
+    z-index: 1;
 }
 
 #left-button {
