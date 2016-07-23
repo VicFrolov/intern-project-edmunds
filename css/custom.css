@@ -134,6 +134,10 @@ html, body {
     margin: 5% 0% 5% 0%;
 }
 
+#personalized-button:hover {
+    background-color: #2B9DFC;
+}
+
 #mmy-button {
     height: 100px;
     color: #007EE5;
@@ -204,11 +208,20 @@ html, body {
     float: left;
     border-radius: 5px;
     margin-left: 1%;
+    overflow: hidden;
 }
 
 .car-row {
     height: 10%;
-    border-bottom-style: solid;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(100,100,100, 0.5);
+
+}
+
+#car-panel-info {
+    height: 5%;
+    background-color: #007EE5;
+    color: #fff;
 }
 
 /* navbar */

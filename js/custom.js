@@ -14,8 +14,8 @@ $(document).ready(function(){
         $(this).toggleClass("clicked");
     });
 
-    var slider = document.getElementById('test5');
-    noUiSlider.create(slider, {
+    var rangeSlider = document.getElementById('test5');
+    noUiSlider.create(rangeSlider, {
         start: [20, 80],
         connect: true,
         step: 1,
@@ -29,16 +29,43 @@ $(document).ready(function(){
     });
 
     var sedan_car_list =  {
-        bmw328i : {
+        bmw328i: {
             image: "../328i.jpg",
             safety: "A",
-            comfort: "A"
+            comfort: "A",
+            mpg: "A"
         },
 
-        bmw528i : {
+        bmw528i: {
             image: "../528i.jpg",
             safety: "A",
-            comfort: "A"
+            comfort: "A",
+            mpg: "B"
         }
     };
+
+    //add_car_to_panel can take a list of cars!
+    var add_car_to_panel = function (car_model, car_type) {
+        var car_to_add = car_type[car_model];
+        console.log(car_to_add);
+    }
+
+    // testing its use
+    add_car_to_panel("bmw328i", sedan_car_list);
+
+
+    //removes cars that do not have the following filter flag
+    var remove_cars_from_panel = function (filter) {
+
+    }
+
+
+    // for (car in sedan_car_list) {
+    //     var current_car = sedan_car_list[car];
+    //     for (description in current_car) {
+    //         if (description === "mpg" && current_car[description] === "A") {
+    //             console.log(current_car[description]);
+    //         }
+    //     }
+    // }
 });
