@@ -14,6 +14,11 @@ $(document).ready(function(){
         $(this).toggleClass("clicked");
     });
 
+    $('.car-row').hover(
+       function(){ $(this).addClass('z-depth-1') },
+       function(){ $(this).removeClass('z-depth-1') }
+    );    
+
     var rangeSlider = document.getElementById('test5');
     noUiSlider.create(rangeSlider, {
         start: [20, 80],
@@ -28,40 +33,75 @@ $(document).ready(function(){
         })
     });
 
+
     var sedan_car_list =  {
         bmw328i: {
-            image: "../328i.jpg",
+            car_name: "BMW 328i",
+            image: "bmw-3.png",
             safety: "A",
             comfort: "A",
             mpg: "A"
         },
 
         bmw528i: {
-            image: "../528i.jpg",
+            car_name: "BMW 528i",
+            image: "bmw-5.png",
             safety: "A",
             comfort: "A",
             mpg: "B"
-        }
+        },
+
+        bmw528i: {
+            car_name: "BMW 528i",
+            image: "bmw-5.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "B"
+        }        
     };
 
-    var add_car_to_panel = function (car_model, car_type) {
+    //add individual car, with optional flags to display
+    var add_car_to_panel = function (car_model, car_type, flags) {
         var car_to_add = car_type[car_model];
-        console.log(car_to_add);
+        var car_safety = "&nbsp;";
+        var car_comfort = "&nbsp;";
+        var car_mpg = "&nbsp;";
+
+        if ($.inArray("safety", flags) > -1) {
+            car_safety = car_to_add["safety"];
+        }
+
+        if ($.inArray("comfort", flags) > -1) {
+            car_comfort = car_to_add["comfort"];
+        }
+
+        if ($.inArray("mpg", flags) > -1) {
+            car_mpg = car_to_add["mpg"];
+        }
+
+        $('#car-panel').append('<div class="row car-row valign-wrapper">' + 
+            '<div class="col s3"><img class="responsive-img" src="../img/car-panel/' + car_to_add["image"] + 
+            '"/></div>' +
+            '<div class="col s3">' + car_to_add["car_name"] + 
+            '</div>' + 
+            '<div class="col s2 center-align">' + car_safety + 
+            '</div>' + 
+            '<div class="col s2 center align">' + car_comfort + 
+            '</div>' + 
+            '<div class="col s2 center align">' + car_mpg + 
+            '</div>' + 
+            '</div>');
     }
 
     // testing its use
-    add_car_to_panel("bmw328i", sedan_car_list);
+    add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort"]);
+    add_car_to_panel("bmw528i", sedan_car_list, ["mpg", "comfort"]);
 
 
     //removes cars that do not have the following filter flag
     var remove_cars_from_panel = function (filter) {
 
     }
-
-    $('.car-row').hover(
-           function(){ $(this).addClass('z-depth-1') },
-           function(){ $(this).removeClass('z-depth-1') }
-    )    
 
 
     // for (car in sedan_car_list) {
