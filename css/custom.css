@@ -209,19 +209,23 @@ html, body {
     border-radius: 5px;
     margin-left: 1%;
     overflow: hidden;
+    overflow-y: scroll;
 }
 
 .car-row {
-    height: 10%;
+    height: 12%;
     border-bottom: 1px solid;
     border-bottom-color: rgba(100,100,100, 0.5);
-
 }
 
 #car-panel-info {
     height: 5%;
     background-color: #007EE5;
     color: #fff;
+}
+
+.row {
+    margin-bottom: 0px;
 }
 
 /* navbar */

@@ -44,7 +44,6 @@ $(document).ready(function(){
         }
     };
 
-    //add_car_to_panel can take a list of cars!
     var add_car_to_panel = function (car_model, car_type) {
         var car_to_add = car_type[car_model];
         console.log(car_to_add);
@@ -58,6 +57,11 @@ $(document).ready(function(){
     var remove_cars_from_panel = function (filter) {
 
     }
+
+    $('.car-row').hover(
+           function(){ $(this).addClass('z-depth-1') },
+           function(){ $(this).removeClass('z-depth-1') }
+    )    
 
 
     // for (car in sedan_car_list) {
