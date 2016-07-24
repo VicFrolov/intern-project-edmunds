@@ -6,6 +6,7 @@ $(document).ready(function(){
     $(".steve_makes").click(function() {
         $(this).attr('class', 'steve_makes_selected');
     });
+
     $(".steve_models").click(function() {
         $(this).attr('class', 'steve_models_selected');
     });
@@ -60,6 +61,12 @@ $(document).ready(function(){
         }        
     };
 
+    $("#sedan-button").click(function () {
+        for (car in sedan_car_list) {
+            add_car_to_panel(car, sedan_car_list);
+        }
+    });
+
     //add individual car, with optional flags to display
     var add_car_to_panel = function (car_model, car_type, flags) {
         var car_to_add = car_type[car_model];
@@ -94,8 +101,8 @@ $(document).ready(function(){
     }
 
     // testing its use
-    add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort"]);
-    add_car_to_panel("bmw528i", sedan_car_list, ["mpg", "comfort"]);
+    // add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort"]);
+    // add_car_to_panel("bmw528i", sedan_car_list, ["mpg", "comfort"]);
 
 
     //removes cars that do not have the following filter flag
@@ -103,13 +110,4 @@ $(document).ready(function(){
 
     }
 
-
-    // for (car in sedan_car_list) {
-    //     var current_car = sedan_car_list[car];
-    //     for (description in current_car) {
-    //         if (description === "mpg" && current_car[description] === "A") {
-    //             console.log(current_car[description]);
-    //         }
-    //     }
-    // }
 });
