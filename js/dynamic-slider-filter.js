@@ -14,6 +14,14 @@ $(document).ready(function () {
        function(){ $(this).removeClass('z-depth-1') }
     );
 
+    $("#car-panel").on("mouseenter", ".car-row", function (event) {
+        $(this).addClass('z-depth-1');
+    }).on("mouseleave", ".car-row", function (event) {
+        $(this).removeClass('z-depth-1');
+    })
+
+
+
 
     var rangeSlider = document.getElementById('test5');
     noUiSlider.create(rangeSlider, {
