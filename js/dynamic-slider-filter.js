@@ -9,62 +9,11 @@ $(document).ready(function () {
         }
     });
 
-    $('.car-row').hover(
-       function(){ $(this).addClass('z-depth-1') },
-       function(){ $(this).removeClass('z-depth-1') }
-    );
-
     $("#car-panel").on("mouseenter", ".car-row", function (event) {
         $(this).addClass('z-depth-1');
     }).on("mouseleave", ".car-row", function (event) {
         $(this).removeClass('z-depth-1');
     })
-
-
-
-
-    var rangeSlider = document.getElementById('test5');
-    noUiSlider.create(rangeSlider, {
-        start: [20, 80],
-        connect: true,
-        step: 1,
-        range: {
-            'min': 0,
-            'max': 100
-        },
-            format: wNumb({
-            decimals: 0
-        })
-    });
-
-
-    var sedan_car_list =  {
-        bmw328i: {
-            car_name: "BMW 328i",
-            image: "bmw-3.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "A"
-        },
-
-        bmw528i: {
-            car_name: "BMW 528i",
-            image: "bmw-5.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "B"
-        },
-
-        bmw528i: {
-            car_name: "BMW 528i",
-            image: "bmw-5.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "B"
-        }        
-    };    
-
-    //add individual car, with optional flags to display
 
     var add_info_panel = function (flags) {
         var column_width = 0;
@@ -98,6 +47,7 @@ $(document).ready(function () {
         $(row_to_add).appendTo("#car-panel").fadeIn(1500);
     };
 
+    //add individual car, with optional flags to display
     var add_car_to_panel = function (car_model, car_type, flags) {
         var car_to_add = car_type[car_model];
         var car_safety = "&nbsp;";
@@ -140,5 +90,31 @@ $(document).ready(function () {
     var remove_cars_from_panel = function (filter) {
 
     }
+
+    var sedan_car_list =  {
+        bmw328i: {
+            car_name: "BMW 328i",
+            image: "bmw-3.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "A"
+        },
+
+        bmw528i: {
+            car_name: "BMW 528i",
+            image: "bmw-5.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "B"
+        },
+
+        bmw528i: {
+            car_name: "BMW 528i",
+            image: "bmw-5.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "B"
+        }        
+    };      
 
 });

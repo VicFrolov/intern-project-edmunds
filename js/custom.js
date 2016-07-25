@@ -14,4 +14,18 @@ $(document).ready(function () {
     $(".research-categories").click( function() {
         $(this).toggleClass("clicked");
     });
+
+    var rangeSlider = document.getElementById('test5');
+    noUiSlider.create(rangeSlider, {
+        start: [20, 80],
+        connect: true,
+        step: 1,
+        range: {
+            'min': 0,
+            'max': 100
+        },
+            format: wNumb({
+            decimals: 0
+        })
+    });    
 });
