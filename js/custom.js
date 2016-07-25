@@ -27,5 +27,7 @@ $(document).ready(function () {
             format: wNumb({
             decimals: 0
         })
-    });    
+    }); 
+    
+   
 });
