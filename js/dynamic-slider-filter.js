@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
+        $("#car-panel-info").remove();
         add_info_panel();
         for (car in sedan_car_list) {
             add_car_to_panel(car, sedan_car_list, ["rank"]);
@@ -18,19 +19,20 @@ $(document).ready(function () {
     var add_info_panel = function (flags) {
         var column_width = 0;
         var flag_count = 0;
+        var row_to_add = "";
         
         if (flags !== undefined) {
             filter_count = flags.length;
         }
         
-        var row_to_add = '<div class="row valign-wrapper" id="car-panel-info" style="display:none;">' + 
+        row_to_add = '<div class="row valign-wrapper" id="car-panel-info" style="display:none;">' + 
             '<div class="col s3">&nbsp;</div>' + 
             '<div class="col s3 left-align">Make</div>';
 
         //general panel, with overall rating, and most searched
         if (flags === undefined) {
             row_to_add += '<div class="col s6 left-align">Overall Rank</div>';
-            flag_count = 4;
+            flag_count += 3;
         } else {
             $(flags).each(function (index, value) {
                 row_to_add += '<div class="col s2">' + value + '</div>';
@@ -44,7 +46,7 @@ $(document).ready(function () {
         }
 
         row_to_add += '</div>';
-        $(row_to_add).appendTo("#car-panel").fadeIn(1500);
+        $(row_to_add).prependTo("#car-panel").fadeIn(1500);
     };
 
     //add individual car, with optional flags to display
@@ -55,6 +57,7 @@ $(document).ready(function () {
         var car_mpg = "&nbsp;";
         var car_rank = "&nbsp;";
         var total_flags = 0;
+        var row_to_add = "";
 
         if ($.inArray("safety", flags) > -1) {
             car_safety = car_to_add["safety"];
@@ -72,7 +75,7 @@ $(document).ready(function () {
             car_rank = car_to_add["rank"];
         }
 
-        var row_to_add = '<div class="row car-row valign-wrapper">' + 
+        row_to_add = '<div class="row car-row valign-wrapper">' + 
             '<div class="col s3"><img class="responsive-img" src="../img/car-panel/' + car_to_add["image"] + 
             '"/></div>' +
             '<div class="col s3" style="font-weight: bold">' + car_to_add["car_name"] + '</div>';
@@ -80,7 +83,8 @@ $(document).ready(function () {
 
         if ($.inArray("rank", flags) > -1) {
             //only adds a div 6 wide, filling the fags
-            row_to_add = '<div class="col s6 left-align">' + car_rank + '</div>';
+            row_to_add += '<div class="col s6 left-align">#' + car_rank + '</div>';
+            total_flags += 3
         } else {
             for (var i = 0; i < flags.length; i += 1) {
                 console.log(flags[i])
@@ -205,7 +209,7 @@ $(document).ready(function () {
         }                                           
     };    
 
-        // add_car_to_panel("bmw328i", sedan_car_list, [ "comfort", "mpg"]);
+        // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
   
 
 });
