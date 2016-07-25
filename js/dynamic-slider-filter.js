@@ -1,5 +1,7 @@
 $(document).ready(function () {
     var filter_count = 0;
+    var ranking = [];       //This is the order the ranking is displayed in the side panel.
+                            //Changing this should change the ranking on refresh.
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
@@ -9,6 +11,15 @@ $(document).ready(function () {
             add_car_to_panel(car, sedan_car_list, ["rank"]);
         }
     });
+
+    $("#suv-button").click(function() {
+        $("#car-panel-info-text").remove();
+        $("#car-panel-info").remove();
+        add_info_panel();
+        for(car in suv_car_list) {
+            add_car_to_panel(car, suv_car_list, ["rank"])
+        }
+    })
 
     $("#car-panel").on("mouseenter", ".car-row", function (event) {
         $(this).addClass('z-depth-1');
@@ -80,6 +91,7 @@ $(document).ready(function () {
             '"/></div>' +
             '<div class="col s3" style="font-weight: bold">' + car_to_add["car_name"] + '</div>';
 
+        ranking.push(car_type[car_model]);  //add to the sorted array for later processing.
 
         if ($.inArray("rank", flags) > -1) {
             //only adds a div 6 wide, filling the fags
@@ -107,6 +119,12 @@ $(document).ready(function () {
         }
         row_to_add += '</div>'
         $(row_to_add).appendTo("#car-panel").fadeIn(1500);
+    }
+
+    //Call this function every time the array 'ranking' is changed. This will paint
+    //the ranking side panel.
+    var print_ranking = function (ranking) {
+
     }
 
     // testing its use
@@ -207,7 +225,66 @@ $(document).ready(function () {
             mpg: "B-",
             rank: 11
         }                                           
-    };    
+    };   
+
+    var suv_car_list =  {
+        bmwx6: {
+            car_name: "BMW X6",
+            image: "bmw-x6.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "A-",
+            rank: 1
+        },
+        bmwx5: {
+            car_name: "BMW X5",
+            image: "bmw-x5.png",
+            safety: "A-",
+            comfort: "A-",
+            mpg: "A-",
+            rank: 2
+        },
+        bmwx4: {
+            car_name: "BMW X4",
+            image: "bmw-x4.png",
+            safety: "A-",
+            comfort: "B+",
+            mpg: "A-",
+            rank: 3
+        },
+        bmwx3: {
+            car_name: "BMW X3",
+            image: "bmw-x3.png",
+            safety: "B",
+            comfort: "A",
+            mpg: "A-",
+            rank: 4
+        },
+        cadillacescaladeesc: {
+            car_name: "Cadillac Escalade ESC",
+            image: "cadillac-escalade-esv.png",
+            safety: "B",
+            comfort: "A",
+            mpg: "B-",
+            rank: 5
+        },
+        cadillacsrx: {
+            car_name: "Cadillac SRX",
+            image: "cadillac-srx.png",
+            safety: "B",
+            comfort: "A-",
+            mpg: "C+",
+            rank: 6
+        },
+        cadillacxt5: {
+            car_name: "Cadillac XT5",
+            image: "cadillac-xt5.png",
+            safety: "C+",
+            comfort: "A-",
+            mpg: "A-",
+            rank: 7
+        }
+    }; 
 
         // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
   
