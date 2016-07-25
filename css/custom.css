@@ -244,6 +244,15 @@ html, body {
     padding: 0% 10% 0% 10%;
 }
 
+#sedan-button:hover {
+    content: url('../img/car-types/Sedans-selected.png');
+
+}
+
+#suv-button:hover {
+    content: url('../img/car-types/SUVs-selected.png');
+}
+
 /* navbar */
 
 #logo {

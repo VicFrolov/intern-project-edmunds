@@ -16,8 +16,10 @@ $(document).ready(function () {
         $(this).removeClass('z-depth-1');
     })
 
+
+    $("")
+
     var add_info_panel = function (flags) {
-        var column_width = 0;
         var flag_count = 0;
         var row_to_add = "";
         
@@ -101,10 +103,10 @@ $(document).ready(function () {
             }
         }
         
-
         for (var i = total_flags; i < 3; i++) {
             row_to_add += '<div class="col s2">&nbsp;</div>';
         }
+
         row_to_add += '</div>'
         $(row_to_add).appendTo("#car-panel").fadeIn(1500);
     }
@@ -115,7 +117,12 @@ $(document).ready(function () {
 
     //removes cars that do not have the following filter flag
     var remove_cars_from_panel = function (filter) {
+        $("#car-row").each(function () {
+            if ("#safety" === "C") {
+                jqueryCommand.remove()
+            }
 
+        })
     }
 
     var sedan_car_list =  {
@@ -208,8 +215,7 @@ $(document).ready(function () {
             rank: 11
         }                                           
     };    
-
-        // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
-  
-
+    add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
+    add_car_to_panel("bmw328i", sedan_car_list, ["safety"]);
+    add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort", "mpg"]);
 });
