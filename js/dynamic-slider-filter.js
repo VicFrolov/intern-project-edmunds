@@ -5,7 +5,7 @@ $(document).ready(function () {
         $("#car-panel-info-text").remove();
         add_info_panel();
         for (car in sedan_car_list) {
-            add_car_to_panel(car, sedan_car_list);
+            add_car_to_panel(car, sedan_car_list, ["rank"]);
         }
     });
 
@@ -53,6 +53,8 @@ $(document).ready(function () {
         var car_safety = "&nbsp;";
         var car_comfort = "&nbsp;";
         var car_mpg = "&nbsp;";
+        var car_rank = "&nbsp;";
+        var total_flags = 0;
 
         if ($.inArray("safety", flags) > -1) {
             car_safety = car_to_add["safety"];
@@ -66,23 +68,44 @@ $(document).ready(function () {
             car_mpg = car_to_add["mpg"];
         }
 
-        $('#car-panel').append('<div class="row car-row valign-wrapper">' + 
+        if ($.inArray("rank", flags) > -1) {
+            car_rank = car_to_add["rank"];
+        }
+
+        var row_to_add = '<div class="row car-row valign-wrapper">' + 
             '<div class="col s3"><img class="responsive-img" src="../img/car-panel/' + car_to_add["image"] + 
             '"/></div>' +
-            '<div class="col s3">' + car_to_add["car_name"] + 
-            '</div>' + 
-            '<div class="col s2 center-align">' + car_safety + 
-            '</div>' + 
-            '<div class="col s2 center align">' + car_comfort + 
-            '</div>' + 
-            '<div class="col s2 center align">' + car_mpg + 
-            '</div>' + 
-            '</div>'
-        );
+            '<div class="col s3" style="font-weight: bold">' + car_to_add["car_name"] + '</div>';
+
+
+        if ($.inArray("rank", flags) > -1) {
+            //only adds a div 6 wide, filling the fags
+            row_to_add = '<div class="col s6 left-align">' + car_rank + '</div>';
+        } else {
+            for (var i = 0; i < flags.length; i += 1) {
+                console.log(flags[i])
+                if (flags[i] === "mpg") {
+                    row_to_add += '<div class="col s2 left-align">' + car_mpg + '</div>';
+                    total_flags += 1;
+                } else if (flags[i] === "comfort") {
+                    row_to_add += '<div class="col s2 left-align">' + car_comfort + '</div>'
+                    total_flags += 1;
+                } else if (flags[i] === "safety") {
+                    row_to_add += '<div class="col s2 left-align">' + car_safety + '</div>'
+                    total_flags += 1;
+                }
+            }
+        }
+        
+
+        for (var i = total_flags; i < 3; i++) {
+            row_to_add += '<div class="col s2">&nbsp;</div>';
+        }
+        row_to_add += '</div>'
+        $(row_to_add).appendTo("#car-panel").fadeIn(1500);
     }
 
     // testing its use
-    // add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort"]);
     // add_car_to_panel("bmw528i", sedan_car_list, ["mpg", "comfort"]);
 
 
@@ -97,24 +120,92 @@ $(document).ready(function () {
             image: "bmw-3.png",
             safety: "A",
             comfort: "A",
-            mpg: "A"
+            mpg: "A-",
+            rank: 1
         },
-
         bmw528i: {
             car_name: "BMW 528i",
             image: "bmw-5.png",
             safety: "A",
             comfort: "A",
-            mpg: "B"
+            mpg: "A-",
+            rank: 2
         },
-
-        bmw528i: {
-            car_name: "BMW 528i",
-            image: "bmw-5.png",
+        bmw728i: {
+            car_name: "BMW 728i",
+            image: "bmw-7.png",
             safety: "A",
             comfort: "A",
-            mpg: "B"
-        }        
-    };      
+            mpg: "B",
+            rank: 3
+        },
+        bmwi3: {
+            car_name: "BMW i3",
+            image: "bmw-i3.png",
+            safety: "A-",
+            comfort: "C",
+            mpg: "A",
+            rank: 4
+        },
+        buickLacrosse: {
+            car_name: "Buick Lacrosse",
+            image: "buick-lacrosse.png",
+            safety: "B",
+            comfort: "B-",
+            mpg: "B",
+            rank: 5
+        },
+        buickRegal: {
+            car_name: "Buick Regal",
+            image: "buick-regal.png",
+            safety: "B",
+            comfort: "C",
+            mpg: "A-",
+            rank: 6
+        },
+        cadillacAts: {
+            car_name: "Cadillac ATS",
+            image: "cadillac-ats.png",
+            safety: "A",
+            comfort: "A",
+            mpg: "C",
+            rank: 7
+        },
+        cadillacCt6: {
+            car_name: "Cadillac CT6",
+            image: "cadillac-ct6.png",
+            safety: "B",
+            comfort: "C",
+            mpg: "A-",
+            rank: 8
+        },
+        chyrsler200: {
+            car_name: "Chrysler 200",
+            image: "chrysler-200.png",
+            safety: "A-",
+            comfort: "B",
+            mpg: "B-",
+            rank: 9
+        },
+        chyrsler200: {
+            car_name: "Chrysler 300",
+            image: "chrysler-300.png",
+            safety: "A-",
+            comfort: "B",
+            mpg: "B-",
+            rank: 10
+        },
+        dodgecharger: {
+            car_name: "Dodge Charger",
+            image: "dodge-charger.png",
+            safety: "A-",
+            comfort: "B",
+            mpg: "B-",
+            rank: 11
+        }                                           
+    };    
+
+        // add_car_to_panel("bmw328i", sedan_car_list, [ "comfort", "mpg"]);
+  
 
 });
