@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
-        add_info_panel(["MPG", "Comfort"])
+        add_info_panel();
         for (car in sedan_car_list) {
             add_car_to_panel(car, sedan_car_list);
         }
@@ -60,18 +60,18 @@ $(document).ready(function () {
 
     var add_info_panel = function (flags) {
         var column_width = 0;
-        filter_count = flags.length;
         var flag_count = 0;
-        column_width = (filter_count === 1) ? "s6" : "s2";
-
-
-
+        
+        if (flags !== undefined) {
+            filter_count = flags.length;
+        }
+        
         var row_to_add = '<div class="row valign-wrapper" id="car-panel-info" style="display:none;">' + 
             '<div class="col s3">&nbsp;</div>' + 
             '<div class="col s3 left-align">Make</div>';
 
         //general panel, with overall rating, and most searched
-        if (filter_count === 1) {
+        if (flags === undefined) {
             row_to_add += '<div class="col s6 left-align">Overall Rank</div>';
             flag_count = 4;
         } else {
@@ -81,32 +81,13 @@ $(document).ready(function () {
             })
         }
 
-
-        for (i = filter_count; i < 3; i += 1) {
+        //adding whitespace in columns for proper alignment
+        for (var i = flag_count; i < 3; i += 1) {
             row_to_add += '<div class="col s2">&nbsp;</div>';
         }
-        // print empty string 
-
-        
-        // if ($.inArray("safety", flags) > -1) {
-        //     safety = '<div class="col s2 center-align">Safety</div>';
-        // }
-        // if ($.inArray("comfort", flags) > -1) {
-        //     comfort = '<div class="col s2 center-align">Safety</div>';
-        // }        
-
-
-        // $('#car-panel').prepend(
-        //     '<div class="col s3 center-align">Make</div>' + 
-
-        //     '</div>'
-        // );
 
         row_to_add += '</div>';
         $(row_to_add).appendTo("#car-panel").fadeIn(1500);
-        //   <div class="col s2 center-align">Safety</div>
-        //   <div class="col s2 center-align">Comfort</div>
-        //   <div class="col s2 center-align">MPG</div>
     };
 
     var add_car_to_panel = function (car_model, car_type, flags) {
