@@ -228,6 +228,22 @@ html, body {
     margin-bottom: 0px;
 }
 
+#panel-image-placeholder {
+    opacity: 0.2;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 80%;
+    width: 80%;
+}
+
+#panel-text-placeholder {
+    text-align: center;
+    margin-top: 10%;
+    opacity: 0.3;
+    font-size: 1.5em;
+    padding: 0% 10% 0% 10%;
+}
+
 /* navbar */
 
 #logo {
