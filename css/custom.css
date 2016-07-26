@@ -230,10 +230,10 @@ html, body {
 
 #panel-image-placeholder {
     opacity: 0.2;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 80%;
-    width: 80%;
+    margin-left: 25%;
+    margin-top: 10%;
+    height: 50%;
+    width: 50%;
 }
 
 #panel-text-placeholder {
@@ -244,14 +244,24 @@ html, body {
     padding: 0% 10% 0% 10%;
 }
 
+#sedan-button.clicked {
+    content: url('../img/car-types/Sedans-selected.png');
+}
+
 #sedan-button:hover {
     content: url('../img/car-types/Sedans-selected.png');
-
+    cursor: pointer;
 }
 
 #suv-button:hover {
     content: url('../img/car-types/SUVs-selected.png');
+    cursor: pointer;
 }
+
+#suv-button.clicked {
+    content: url('../img/car-types/SUVs-selected.png');
+}
+
 
 /* navbar */
 

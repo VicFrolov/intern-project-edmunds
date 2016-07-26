@@ -11,10 +11,6 @@ $(document).ready(function () {
         $(this).attr('class', 'steve_models_selected');
     });
 
-    $(".research-categories").click( function() {
-        $(this).toggleClass("clicked");
-    });
-
     var rangeSlider = document.getElementById('test5');
     noUiSlider.create(rangeSlider, {
         start: [20, 80],
@@ -27,7 +23,19 @@ $(document).ready(function () {
             format: wNumb({
             decimals: 0
         })
-    }); 
+    });
+
+    $(".research-categories").click(function() {
+        $(this).toggleClass("clicked");
+    });
+
+    $("#sedan-button").click(function() {
+        $(this).toggleClass("clicked");
+    });
+    
+    $("#suv-button").click(function() {
+        $(this).toggleClass("clicked");
+    });    
     
    
 });
