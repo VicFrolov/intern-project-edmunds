@@ -276,7 +276,8 @@ thead {
 }
 
 #fixed-panel-width {
-    min-width: 150px;
+    width: 150px;
+    max-width:150px;
 }
 
 #image-panel-width {

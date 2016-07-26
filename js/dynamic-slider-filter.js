@@ -5,7 +5,6 @@ $(document).ready(function () {
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
-        $("#car-panel-info").remove();
         add_info_panel();
         for (car in sedan_car_list) {
             add_car_to_panel(car, sedan_car_list, ["rank"]);
@@ -28,41 +27,24 @@ $(document).ready(function () {
     })
 
 
-    $("")
+    var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
+        "Sound System", "Acceleration"];
 
     var add_info_panel = function (flags) {
         var flag_count = 0;
-        var row_to_add = "";
-        
-        if (flags !== undefined) {
-            filter_count = flags.length;
-        }
-        
-        row_to_add = '<div class="row valign-wrapper" id="car-panel-info" style="display:none;">' + 
-            '<div class="col s3">&nbsp;</div>' + 
-            '<div class="col s3 left-align">Make</div>';
+        var row_to_add = "<tr>" + "<th data-field='id' id='fixed-panel-width'>" + 
+            "<img id='expand-button' src='../img/car-panel/expand-button.png'/></th>";
 
-        //general panel, with overall rating, and most searched
-        if (flags === undefined) {
-            row_to_add += '<div class="col s6 left-align">Overall Rank</div>';
-            flag_count += 3;
-        } else {
-            $(flags).each(function (index, value) {
-                row_to_add += '<div class="col s2">' + value + '</div>';
-                flag_count += 1;
-            })
+        for (var i = 0; i < info_panel_content.length; i +=1) {
+            row_to_add += "<th data-field='header' id='fixed-panel-width'>" + info_panel_content[i] + "</th>";
         }
 
-        //adding whitespace in columns for proper alignment
-        for (var i = flag_count; i < 3; i += 1) {
-            row_to_add += '<div class="col s2">&nbsp;</div>';
-        }
-
-        row_to_add += '</div>';
-        $(row_to_add).prependTo("#car-panel").fadeIn(1500);
+        console.log(row_to_add)
+        $(row_to_add).prependTo("#car-panel-info").fadeIn(1500);
     };
 
-    //add individual car, with optional flags to display
+    // add individual car, with optional flags to display
+
     var add_car_to_panel = function (car_model, car_type, flags) {
         var car_to_add = car_type[car_model];
         var car_safety = "&nbsp;";
