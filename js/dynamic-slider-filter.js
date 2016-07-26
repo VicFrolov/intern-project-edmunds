@@ -293,6 +293,29 @@ $(document).ready(function () {
         }
     };
 
+    var slider_panel_expanded = false;
+    $("#shell").on('click', '#car-panel', function () {
+        slider_panel_expanded = !slider_panel_expanded;
+        console.log(slider_panel_expanded)
+
+        if (slider_panel_expanded) {
+            $("#gallery").animate({
+                width: "1%"
+            }, 700)
+            $("#car-panel").animate({
+                width: "98%"
+            }, 700);
+        } else {
+            $("#gallery").animate({
+                width: "70%"
+            }, 700)
+            $("#car-panel").animate({
+                width: "29%"
+            }, 700);
+        }
+
+    });
+
     // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort", "mpg"]);
