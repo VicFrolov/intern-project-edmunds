@@ -27,9 +27,6 @@ $(document).ready(function () {
         $(this).removeClass('z-depth-1');
     })
 
-
-    $("")
-
     var add_info_panel = function (flags) {
         var flag_count = 0;
         var row_to_add = "";
@@ -126,7 +123,7 @@ $(document).ready(function () {
     //Call this function every time the array 'ranking' is changed. This will paint
     //the ranking side panel.
     var print_ranking = function (ranking) {
-
+        
     }
 
     // testing its use
