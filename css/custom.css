@@ -262,6 +262,26 @@ html, body {
     content: url('../img/car-types/SUVs-selected.png');
 }
 
+th, td {
+    min-width:100px;
+    padding: 10px 0px 0px 20px;
+    border-radius: 0;
+}
+
+thead {
+    border-bottom: 0px;
+    background-color: #007EE5;
+    color: #fff;
+}
+
+#fixed-panel-width {
+    min-width: 130px;
+}
+
+#image-panel-width {
+    min-width: 100px;
+}
+
 
 /* navbar */
 

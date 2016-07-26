@@ -300,7 +300,7 @@ $(document).ready(function () {
                 width: "1%"
             }, 700)
             $("#car-panel").animate({
-                width: "98%"
+                width: "93%"
             }, 700);
         } else {
             $("#gallery").animate({
