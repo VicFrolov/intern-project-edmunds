@@ -292,7 +292,7 @@ $(document).ready(function () {
     };
 
     var slider_panel_expanded = false;
-    $("#shell").on('click', '#car-panel-info', function () {
+    $("#shell").on('click', '#expand-button', function () {
         slider_panel_expanded = !slider_panel_expanded;
 
         if (slider_panel_expanded) {
@@ -300,7 +300,7 @@ $(document).ready(function () {
                 width: "1%"
             }, 300)
             $("#car-panel").animate({
-                width: "97%"
+                width: "98%"
             }, 300);
         } else {
             $("#gallery").animate({
