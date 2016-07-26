@@ -298,20 +298,23 @@ $(document).ready(function () {
         if (slider_panel_expanded) {
             $("#gallery").animate({
                 width: "1%"
-            }, 700)
+            }, 300)
             $("#car-panel").animate({
-                width: "93%"
-            }, 700);
+                width: "97%"
+            }, 300);
         } else {
             $("#gallery").animate({
                 width: "70%"
-            }, 700)
+            }, 300)
             $("#car-panel").animate({
                 width: "29%"
-            }, 700);
+            }, 300);
         }
     });
 
+    $("#expand-button").on("click", function() {
+        $(this).toggleClass("rotate-180");
+    });
     // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort", "mpg"]);

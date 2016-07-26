@@ -266,6 +266,7 @@ th, td {
     min-width:100px;
     padding: 10px 0px 0px 20px;
     border-radius: 0;
+    vertical-align: middle;
 }
 
 thead {
@@ -275,19 +276,29 @@ thead {
 }
 
 #fixed-panel-width {
-    min-width: 130px;
+    min-width: 150px;
 }
 
 #image-panel-width {
     min-width: 100px;
 }
 
+#expand-button {
+    max-height: 4%;
+    cursor: pointer;
+}
 
+.rotate-180 {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
 /* navbar */
 
 #logo {
     width: 50%;
-    height:50%;
+    height: 50%;
 }
 
 nav .brand-logo {
