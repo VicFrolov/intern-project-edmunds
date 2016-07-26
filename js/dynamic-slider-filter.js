@@ -1,13 +1,12 @@
 $(document).ready(function () {
-    var filter_count = 0;
     var ranking = [];       //This is the order the ranking is displayed in the side panel.
                             //Changing this should change the ranking on refresh.
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
         add_info_panel();
-        for (car in sedan_car_list) {
-            add_car_to_panel(car, sedan_car_list, ["rank"]);
+        for (var i = 0; i < sedan_car_list.length; i += 1) {
+            add_car_to_panel(sedan_car_list[i]);
         }
     });
 
@@ -18,14 +17,13 @@ $(document).ready(function () {
         for(car in suv_car_list) {
             add_car_to_panel(car, suv_car_list, ["rank"])
         }
-    })
+    });
 
     $("#car-panel").on("mouseenter", ".car-row", function (event) {
         $(this).addClass('z-depth-1');
     }).on("mouseleave", ".car-row", function (event) {
         $(this).removeClass('z-depth-1');
-    })
-
+    });
 
     var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
         "Sound System", "Acceleration"];
@@ -39,69 +37,23 @@ $(document).ready(function () {
             row_to_add += "<th data-field='header' id='fixed-panel-width'>" + info_panel_content[i] + "</th>";
         }
 
-        console.log(row_to_add)
         $(row_to_add).prependTo("#car-panel-info").fadeIn(1500);
     };
 
     // add individual car, with optional flags to display
+    var add_car_to_panel = function (car_array) {
+        var row_to_add = "<tr>"; 
 
-    var add_car_to_panel = function (car_model, car_type, flags) {
-        var car_to_add = car_type[car_model];
-        var car_safety = "&nbsp;";
-        var car_comfort = "&nbsp;";
-        var car_mpg = "&nbsp;";
-        var car_rank = "&nbsp;";
-        var total_flags = 0;
-        var row_to_add = "";
-
-        if ($.inArray("safety", flags) > -1) {
-            car_safety = car_to_add["safety"];
-        }
-
-        if ($.inArray("comfort", flags) > -1) {
-            car_comfort = car_to_add["comfort"];
-        }
-
-        if ($.inArray("mpg", flags) > -1) {
-            car_mpg = car_to_add["mpg"];
-        }
-
-        if ($.inArray("rank", flags) > -1) {
-            car_rank = car_to_add["rank"];
-        }
-
-        row_to_add = '<div class="row car-row valign-wrapper">' + 
-            '<div class="col s3"><img class="responsive-img" src="../img/car-panel/' + car_to_add["image"] + 
-            '"/></div>' +
-            '<div class="col s3" style="font-weight: bold">' + car_to_add["car_name"] + '</div>';
-
-        ranking.push(car_type[car_model]);  //add to the sorted array for later processing.
-
-        if ($.inArray("rank", flags) > -1) {
-            row_to_add += '<div class="col s6 left-align">#' + car_rank + '</div>';
-            total_flags += 3
-        } else {
-            for (var i = 0; i < flags.length; i += 1) {
-                console.log(flags[i])
-                if (flags[i] === "mpg") {
-                    row_to_add += '<div class="col s2 left-align">' + car_mpg + '</div>';
-                    total_flags += 1;
-                } else if (flags[i] === "comfort") {
-                    row_to_add += '<div class="col s2 left-align">' + car_comfort + '</div>'
-                    total_flags += 1;
-                } else if (flags[i] === "safety") {
-                    row_to_add += '<div class="col s2 left-align">' + car_safety + '</div>'
-                    total_flags += 1;
-                }
+        for (var i = 0; i < car_array.length; i += 1) {
+            if (i === 0) {
+                row_to_add += "<td><img class='responsive-img' src='../img/car-panel/" + car_array[0] + "'></td>";
+            } else {
+               row_to_add += "<td>" + car_array[i] + "</td>"
             }
         }
-        
-        for (var i = total_flags; i < 3; i++) {
-            row_to_add += '<div class="col s2">&nbsp;</div>';
-        }
 
-        row_to_add += '</div>'
-        $(row_to_add).appendTo("#car-panel").fadeIn(1500);
+        row_to_add += '</tr>'
+        $(row_to_add).appendTo("#car-panel-list").fadeIn(1500);
     }
 
     //Call this function every time the array 'ranking' is changed. This will paint
@@ -123,96 +75,19 @@ $(document).ready(function () {
         $(this).fadeOut('slow', function(){ this.remove(); });
     });
 
-    var sedan_car_list =  {
-        bmw328i: {
-            car_name: "BMW 328i",
-            image: "bmw-3.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "A-",
-            rank: 1
-        },
-        bmw528i: {
-            car_name: "BMW 528i",
-            image: "bmw-5.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "A-",
-            rank: 2
-        },
-        bmw728i: {
-            car_name: "BMW 728i",
-            image: "bmw-7.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "B",
-            rank: 3
-        },
-        bmwi3: {
-            car_name: "BMW i3",
-            image: "bmw-i3.png",
-            safety: "A-",
-            comfort: "C",
-            mpg: "A",
-            rank: 4
-        },
-        buickLacrosse: {
-            car_name: "Buick Lacrosse",
-            image: "buick-lacrosse.png",
-            safety: "B",
-            comfort: "B-",
-            mpg: "B",
-            rank: 5
-        },
-        buickRegal: {
-            car_name: "Buick Regal",
-            image: "buick-regal.png",
-            safety: "B",
-            comfort: "C",
-            mpg: "A-",
-            rank: 6
-        },
-        cadillacAts: {
-            car_name: "Cadillac ATS",
-            image: "cadillac-ats.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "C",
-            rank: 7
-        },
-        cadillacCt6: {
-            car_name: "Cadillac CT6",
-            image: "cadillac-ct6.png",
-            safety: "B",
-            comfort: "C",
-            mpg: "A-",
-            rank: 8
-        },
-        chyrsler200: {
-            car_name: "Chrysler 200",
-            image: "chrysler-200.png",
-            safety: "A-",
-            comfort: "B",
-            mpg: "B-",
-            rank: 9
-        },
-        chyrsler200: {
-            car_name: "Chrysler 300",
-            image: "chrysler-300.png",
-            safety: "A-",
-            comfort: "B",
-            mpg: "B-",
-            rank: 10
-        },
-        dodgecharger: {
-            car_name: "Dodge Charger",
-            image: "dodge-charger.png",
-            safety: "A-",
-            comfort: "B",
-            mpg: "B-",
-            rank: 11
-        }                                           
-    };   
+    var sedan_car_list =  [
+        ["bmw-3.png", "BMW 328i", "$52,450", 1, "A", "A", "A-", "A-", "B", "A"],
+        ["bmw-5.png", "BMW 528i", "$54,950", 2, "A", "A", "A-", "A", "A", "A"],
+        ["bmw-7.png", "BMW 728i", "$57,350", 3, "A", "A", "B", "B-", "A", "B"],
+        ["bmw-i3.png", "BMW i3", "$32,000", 4, "A-", "C", "A", "A-", "B", "A"], 
+        ["buick-lacrosse.png", "Buick Lacrosse", "$28,999", 5, "B", "B-", "B", "A-", "B", "A"],
+        ["buick-regal.png", "Buick Regal", "$32,999", 6, "B", "C", "A-", "C-", "C", "B"],
+        ["cadillac-ats.png", "Cadillac ATS", "$29,950", 7, "A", "A", "C", "A-", "C", "A"],
+        ["cadillac-ct6.png", "Cadillac CT6", "$32,499", 8, "B", "C", "A-", "B-", "B", "B"],
+        ["chrysler-200.png", "Chrysler 200", "$28,450", 9, "A-", "B", "B-", "C", "C", "C" ],
+        ["chrysler-300.png", "Chrysler 300", "$38,999", 10, "A-", "B", "B-" , "C-", "C", "B"],
+        ["dodge-charger.png", "Dodge Charger", "$22,450", 11, "A-", "B", "B-", "B-", "B", "B-"]
+    ];
 
     var suv_car_list =  {
         bmwx6: {
@@ -276,7 +151,7 @@ $(document).ready(function () {
     var slider_panel_expanded = false;
     $("#shell").on('click', '#expand-button', function () {
         slider_panel_expanded = !slider_panel_expanded;
-
+        $(this).toggleClass("rotate-180");
         if (slider_panel_expanded) {
             $("#gallery").animate({
                 width: "1%"
@@ -294,9 +169,6 @@ $(document).ready(function () {
         }
     });
 
-    $("#expand-button").on("click", function() {
-        $(this).toggleClass("rotate-180");
-    });
     // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety"]);
     // add_car_to_panel("bmw328i", sedan_car_list, ["safety", "comfort", "mpg"]);
