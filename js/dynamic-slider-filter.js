@@ -96,7 +96,6 @@ $(document).ready(function () {
         ranking.push(car_type[car_model]);  //add to the sorted array for later processing.
 
         if ($.inArray("rank", flags) > -1) {
-            //only adds a div 6 wide, filling the fags
             row_to_add += '<div class="col s6 left-align">#' + car_rank + '</div>';
             total_flags += 3
         } else {
@@ -129,19 +128,18 @@ $(document).ready(function () {
 
     }
 
-    // testing its use
-    // add_car_to_panel("bmw528i", sedan_car_list, ["mpg", "comfort"]);
-
-
     //removes cars that do not have the following filter flag
     var remove_cars_from_panel = function (filter) {
-        $("#car-row").each(function () {
+        $("#car-row").each(function (event) {
             if ("#safety" === "C") {
                 jqueryCommand.remove()
             }
-
-        })
+        });
     }
+
+    $('#car-panel').on('click', '.car-row', function() {
+        $(this).fadeOut('slow', function(){ this.remove(); });
+    });
 
     var sedan_car_list =  {
         bmw328i: {
@@ -294,9 +292,8 @@ $(document).ready(function () {
     };
 
     var slider_panel_expanded = false;
-    $("#shell").on('click', '#car-panel', function () {
+    $("#shell").on('click', '#car-panel-info', function () {
         slider_panel_expanded = !slider_panel_expanded;
-        console.log(slider_panel_expanded)
 
         if (slider_panel_expanded) {
             $("#gallery").animate({
@@ -313,7 +310,6 @@ $(document).ready(function () {
                 width: "29%"
             }, 700);
         }
-
     });
 
     // add_car_to_panel("bmw328i", sedan_car_list, ["mpg", "comfort"]);
