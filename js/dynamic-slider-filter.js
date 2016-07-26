@@ -23,7 +23,6 @@ $(document).ready(function () {
         $(this).addClass('z-depth-1');
     }).on("mouseleave", ".car-row", function (event) {
         $(this).removeClass('z-depth-1');
-    });
 
     var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
         "Sound System", "Acceleration"];
@@ -59,7 +58,7 @@ $(document).ready(function () {
     //Call this function every time the array 'ranking' is changed. This will paint
     //the ranking side panel.
     var print_ranking = function (ranking) {
-
+        
     }
 
     //removes cars that do not have the following filter flag
