@@ -15,7 +15,7 @@ $(document).ready(function () {
         $("#car-panel-info").remove();
         add_info_panel();
         for(car in suv_car_list) {
-            add_car_to_panel(car, suv_car_list, ["rank"])
+            add_car_to_panel(car, suv_car_list, ["rank"]);
         }
     });
 
@@ -23,6 +23,7 @@ $(document).ready(function () {
         $(this).addClass('z-depth-1');
     }).on("mouseleave", ".car-row", function (event) {
         $(this).removeClass('z-depth-1');
+    });
 
     var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
         "Sound System", "Acceleration"];
@@ -47,7 +48,7 @@ $(document).ready(function () {
             if (i === 0) {
                 row_to_add += "<td><img class='responsive-img' src='../img/car-panel/" + car_array[0] + "'></td>";
             } else {
-               row_to_add += "<td>" + car_array[i] + "</td>"
+               row_to_add += "<td>" + car_array[i] + "</td>";
             }
         }
 
@@ -58,7 +59,11 @@ $(document).ready(function () {
     //Call this function every time the array 'ranking' is changed. This will paint
     //the ranking side panel.
     var print_ranking = function (ranking) {
-        
+        $("#car-panel-info-text").remove();
+        add_info_panel();
+        for (var i = 0; i < ranking.length; i += 1) {
+            add_car_to_panel(ranking[i]);
+        }
     }
 
     //removes cars that do not have the following filter flag
@@ -88,64 +93,15 @@ $(document).ready(function () {
         ["dodge-charger.png", "Dodge Charger", "$22,450", 11, "A-", "B", "B-", "B-", "B", "B-"]
     ];
 
-    var suv_car_list =  {
-        bmwx6: {
-            car_name: "BMW X6",
-            image: "bmw-x6.png",
-            safety: "A",
-            comfort: "A",
-            mpg: "A-",
-            rank: 1
-        },
-        bmwx5: {
-            car_name: "BMW X5",
-            image: "bmw-x5.png",
-            safety: "A-",
-            comfort: "A-",
-            mpg: "A-",
-            rank: 2
-        },
-        bmwx4: {
-            car_name: "BMW X4",
-            image: "bmw-x4.png",
-            safety: "A-",
-            comfort: "B+",
-            mpg: "A-",
-            rank: 3
-        },
-        bmwx3: {
-            car_name: "BMW X3",
-            image: "bmw-x3.png",
-            safety: "B",
-            comfort: "A",
-            mpg: "A-",
-            rank: 4
-        },
-        cadillacescaladeesc: {
-            car_name: "Cadillac Escalade ESC",
-            image: "cadillac-escalade-esv.png",
-            safety: "B",
-            comfort: "A",
-            mpg: "B-",
-            rank: 5
-        },
-        cadillacsrx: {
-            car_name: "Cadillac SRX",
-            image: "cadillac-srx.png",
-            safety: "B",
-            comfort: "A-",
-            mpg: "C+",
-            rank: 6
-        },
-        cadillacxt5: {
-            car_name: "Cadillac XT5",
-            image: "cadillac-xt5.png",
-            safety: "C+",
-            comfort: "A-",
-            mpg: "A-",
-            rank: 7
-        }
-    };
+    var suv_car_list = [
+        ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A"],
+        ["bmw-x5.png", "BMW X5", "$54,700", 2, "A-", "A-", "A-", "A", "A", "A"],
+        ["bmw-x4.png", "BMW X4", "$52,350", 3, "A-", "A-", "A-", "A-", "A-", "A-"],
+        ["bmw-x3.png", "BMW X3", "$52,350", 4, "B+", "A-", "B+", "B+", "A", "A-"],
+        ["cadillac-escalade-esv.png", "Cadillac Escalade ESC", "$72,970", 5, "B+", "B+", "B+", "B+", "A", "A-"],
+        ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-"],
+        ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-"],
+    ];
 
     var slider_panel_expanded = false;
     $("#shell").on('click', '#expand-button', function () {
