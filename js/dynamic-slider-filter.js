@@ -15,7 +15,7 @@ $(document).ready(function () {
         $("#car-panel-info").remove();
         add_info_panel();
         for(car in suv_car_list) {
-            add_car_to_panel(car, suv_car_list, ["rank"])
+            add_car_to_panel(car, suv_car_list, ["rank"]);
         }
     });
 
@@ -23,6 +23,7 @@ $(document).ready(function () {
         $(this).addClass('z-depth-1');
     }).on("mouseleave", ".car-row", function (event) {
         $(this).removeClass('z-depth-1');
+    });
 
     var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
         "Sound System", "Acceleration"];
@@ -47,11 +48,22 @@ $(document).ready(function () {
             if (i === 0) {
                 row_to_add += "<td><img class='responsive-img' src='../img/car-panel/" + car_array[0] + "'></td>";
             } else {
-               row_to_add += "<td>" + car_array[i] + "</td>"
+                row_to_add += "<td"
+                if (car_array[i] === "A" || car_array[i] === "A-") {
+                    row_to_add += " class='green-review'";
+                } else if (car_array[i] === "B" || car_array[i] === "B-") {
+                    row_to_add += " class='orange-review'";
+                } else if (car_array[i] === "C" || car_array[i] === "C-") {
+                    row_to_add += " class='red-review'";
+                }
+
+               row_to_add += ">" + car_array[i] + "</td>"
             }
         }
 
         row_to_add += '</tr>'
+
+        console.log(row_to_add)
         $(row_to_add).appendTo("#car-panel-list").fadeIn(1500);
     }
 
