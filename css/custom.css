@@ -25,7 +25,9 @@ html, body {
     position: absolute;
     z-index: 2;
     top: 60%;
-    left: 33%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .slider.fullscreen {
@@ -267,6 +269,21 @@ th, td {
     padding: 10px 0px 0px 20px;
     border-radius: 0;
     vertical-align: middle;
+}
+
+.red-review {
+    background-color: rgba(255, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.green-review {
+    background-color: rgba(0, 255, 0, 0.2);
+    font-weight: bold;
+}
+
+.orange-review {
+    background-color: rgba(255, 255, 0, 0.2);
+    font-weight: bold;
 }
 
 thead {

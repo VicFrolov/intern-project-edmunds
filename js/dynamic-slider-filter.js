@@ -25,7 +25,7 @@ $(document).ready(function () {
         $(this).removeClass('z-depth-1');
     });
 
-    var info_panel_content = ["Make", "Most Researched", "Price", "Comfort", "MPG", "Safety", "High Tech", 
+    var info_panel_content = ["Make", "Price", "Most Popular", "Comfort", "MPG", "Safety", "High Tech", 
         "Sound System", "Acceleration"];
 
     var add_info_panel = function (flags) {
@@ -37,9 +37,10 @@ $(document).ready(function () {
             row_to_add += "<th data-field='header' id='fixed-panel-width'>" + info_panel_content[i] + "</th>";
         }
 
-        $(row_to_add).prependTo("#car-panel-info").fadeIn(1500);
+        $(row_to_add).hide().prependTo("#car-panel-info").fadeIn(1000);
     };
 
+    var fade_delay = 0
     // add individual car, with optional flags to display
     var add_car_to_panel = function (car_array) {
         var row_to_add = "<tr>"; 
@@ -48,12 +49,23 @@ $(document).ready(function () {
             if (i === 0) {
                 row_to_add += "<td><img class='responsive-img' src='../img/car-panel/" + car_array[0] + "'></td>";
             } else {
-               row_to_add += "<td>" + car_array[i] + "</td>";
+                row_to_add += "<td"
+                if (car_array[i] === "A" || car_array[i] === "A-") {
+                    row_to_add += " class='green-review'";
+                } else if (car_array[i] === "B" || car_array[i] === "B-") {
+                    row_to_add += " class='orange-review'";
+                } else if (car_array[i] === "C" || car_array[i] === "C-") {
+                    row_to_add += " class='red-review'";
+                }
+
+               row_to_add += ">" + car_array[i] + "</td>"
             }
         }
 
         row_to_add += '</tr>'
-        $(row_to_add).appendTo("#car-panel-list").fadeIn(1500);
+
+        fade_delay += 100;
+        $(row_to_add).hide().delay(fade_delay).appendTo("#car-panel-list").fadeIn(3000);
     }
 
     //Call this function every time the array 'ranking' is changed. This will paint
@@ -110,17 +122,17 @@ $(document).ready(function () {
         if (slider_panel_expanded) {
             $("#gallery").animate({
                 width: "1%"
-            }, 300)
+            }, 350)
             $("#car-panel").animate({
                 width: "98%"
-            }, 300);
+            }, 350);
         } else {
             $("#gallery").animate({
                 width: "70%"
-            }, 300)
+            }, 350)
             $("#car-panel").animate({
                 width: "29%"
-            }, 300);
+            }, 350);
         }
     });
 
