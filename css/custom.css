@@ -201,6 +201,12 @@ html, body {
     color: #ffffff;
 }
 
+.rslider {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 /*research-right hand size for car display */
 
 #car-panel {
@@ -265,7 +271,7 @@ html, body {
 }
 
 th, td {
-    min-width:100px;
+    min-width:135px;
     padding: 10px 0px 0px 20px;
     border-radius: 0;
     vertical-align: middle;

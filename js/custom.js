@@ -35,7 +35,23 @@ $(document).ready(function () {
     
     $("#suv-button").click(function() {
         $(this).toggleClass("clicked");
-    });    
+    });
+
+    //round slider
+    $("#slider").roundSlider({
+        sliderType: "range",
+        value: "20,40"
+    });
+
+    $("#slider2").roundSlider({
+        sliderType: "range",
+        value: "30,60"
+    });
+
+    $("#slider3").roundSlider({
+        sliderType: "range",
+        value: "40,80"
+    });
     
    
 });
