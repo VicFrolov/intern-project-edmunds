@@ -207,6 +207,17 @@ html, body {
   margin-left: 20px;
 }
 
+.rs-control .rs-range-color {
+    background-color: #007EE5;
+}
+
+.rs-control .rs-handle {
+    background-color: #edeaea;
+}
+
+#payment-sliders {
+}
+
 /*research-right hand size for car display */
 
 #car-panel {
