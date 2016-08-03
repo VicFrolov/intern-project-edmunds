@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
+        $("#car-panel-topbar").remove();
         add_info_panel();
         for (var i = 0; i < sedan_car_list.length; i += 1) {
             add_car_to_panel(sedan_car_list[i]);
@@ -12,7 +13,7 @@ $(document).ready(function () {
 
     $("#suv-button").click(function() {
         $("#car-panel-info-text").remove();
-        $("#car-panel-info").remove();
+        $("#car-panel-topbar").remove();
         add_info_panel();
         for(var i = 0; i < suv_car_list.length; i += 1) {
             add_car_to_panel(suv_car_list[i]);
