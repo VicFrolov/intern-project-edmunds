@@ -14,8 +14,8 @@ $(document).ready(function () {
         $("#car-panel-info-text").remove();
         $("#car-panel-info").remove();
         add_info_panel();
-        for(car in suv_car_list) {
-            add_car_to_panel(car, suv_car_list, ["rank"]);
+        for(var i = 0; i < suv_car_list.length; i += 1) {
+            add_car_to_panel(suv_car_list[i]);
         }
     });
 
@@ -112,13 +112,13 @@ $(document).ready(function () {
     ];
 
     var suv_car_list = [
-        ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A"],
-        ["bmw-x5.png", "BMW X5", "$54,700", 2, "A-", "A-", "A-", "A", "A", "A"],
-        ["bmw-x4.png", "BMW X4", "$52,350", 3, "A-", "A-", "A-", "A-", "A-", "A-"],
-        ["bmw-x3.png", "BMW X3", "$52,350", 4, "B+", "A-", "B+", "B+", "A", "A-"],
-        ["cadillac-escalade-esv.png", "Cadillac Escalade ESC", "$72,970", 5, "B+", "B+", "B+", "B+", "A", "A-"],
-        ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-"],
-        ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-"],
+        ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A", 50],
+        ["bmw-x5.png", "BMW X5", "$54,700", 2, "A-", "A-", "A-", "A", "A", "A", 50],
+        ["bmw-x4.png", "BMW X4", "$52,350", 3, "A-", "A-", "A-", "A-", "A-", "A-", 50],
+        ["bmw-x3.png", "BMW X3", "$52,350", 4, "B+", "A-", "B+", "B+", "A", "A-", 50],
+        ["cadillac-escalade-esv.png", "Cadillac Escalade ESC", "$72,970", 5, "B+", "B+", "B+", "B+", "A", "A-", 50],
+        ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-", 50],
+        ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-", 50],
     ];
 
     var slider_panel_expanded = false;
