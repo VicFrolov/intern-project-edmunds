@@ -25,19 +25,11 @@ $(document).ready(function () {
         $(this).removeClass('z-depth-1');
     });
 
-    var info_panel_content = ["Make", "Price", "Most Popular", "Comfort", "MPG", "Safety", "High Tech", 
-        "Sound System", "Acceleration"];
-
     var add_info_panel = function (flags) {
-        var flag_count = 0;
-        var row_to_add = "<tr>" + "<th data-field='id' id='fixed-panel-width'>" + 
-            "<img id='expand-button' src='../img/car-panel/expand-button.png'/></th>";
+        var row_to_add = "<div id='car-panel-topbar'>" + "Your Top Matches" + 
+            "<img id='expand-button' src='../img/car-panel/expand-button.png'/>" + "</div>"
 
-        for (var i = 0; i < info_panel_content.length; i +=1) {
-            row_to_add += "<th data-field='header' id='fixed-panel-width'>" + info_panel_content[i] + "</th>";
-        }
-
-        $(row_to_add).hide().prependTo("#car-panel-info").fadeIn(1000);
+        $(row_to_add).hide().prependTo("#car-panel").fadeIn(1000);
     };
 
     var fade_delay = 0
@@ -71,7 +63,7 @@ $(document).ready(function () {
 
 
         fade_delay += 100;
-        $(card_panel).hide().delay(fade_delay).appendTo("#car-panel").fadeIn(3000);
+        $(card_panel).hide().delay(fade_delay).appendTo("#car-panel-list").fadeIn(3000);
     }
 
     //Call this function every time the array 'ranking' is changed. This will paint
@@ -132,9 +124,13 @@ $(document).ready(function () {
             $("#car-panel").animate({
                 width: "98%"
             }, 350);
-            $(".car-panel-card").animate({
-                width: "35%"
-            }, 350);            
+            setTimeout(function(){
+                $(".car-panel-card").animate({
+                    width: "35%"
+                }, 350); 
+            }, 150);
+
+            
         } else {
             $("#gallery").animate({
                 width: "67%"

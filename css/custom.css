@@ -253,7 +253,7 @@ html, body {
     overflow-y: scroll;
 }
 
-#car-panel-info {
+#car-panel-topbar {
     background-color: #007EE5;
     color: white;
     width: 100%;
@@ -402,8 +402,11 @@ html, body {
 }
 
 #expand-button {
-    max-height: 4%;
+    max-height: 70%;
+    margin-left: 5px;
+    margin-top: 5px;
     cursor: pointer;
+    float: left;
 }
 
 .rotate-180 {
