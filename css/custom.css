@@ -409,18 +409,19 @@ html, body {
 }
 
 .red-review {
-    background-color: rgba(255, 0, 0, 0.2);
-    font-weight: bold;
+    color: red;
 }
 
 .green-review {
-    background-color: rgba(0, 255, 0, 0.2);
-    font-weight: bold;
+    color: green;
 }
 
 .orange-review {
-    background-color: rgba(255, 255, 0, 0.2);
-    font-weight: bold;
+    color: orange;
+}
+
+.grey-review {
+    color: grey;
 }
 
 #expand-button {

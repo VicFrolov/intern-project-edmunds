@@ -1,20 +1,20 @@
 $(document).ready(function () {
     var sedan_car_list =  [
-        ["bmw-3.png", "BMW 328i", "$52,450", 1, "A", "A", "A-", "A-", "B", "A", 50],
-        ["buick-lacrosse.png", "Buick Lacrosse", "$28,999", 5, "B", "B-", "B", "A-", "B", "A", 50],        
-        ["bmw-5.png", "BMW 528i", "$54,950", 2, "A", "A", "A-", "A", "A", "A", 50],        
-        ["dodge-charger.png", "Dodge Charger", "$22,450", 11, "C-", "B", "B-", "B-", "B", "B-", 50],
-        ["buick-regal.png", "Buick Regal", "$32,999", 6, "B-", "C", "A-", "C-", "C", "B", 50],
-        ["bmw-i3.png", "BMW i3", "$32,000", 4, "A-", "C", "A", "A-", "B", "A", 50], 
-        ["cadillac-ats.png", "Cadillac ATS", "$29,950", 7, "C", "A", "C", "A-", "C", "A", 50],
-        ["cadillac-ct6.png", "Cadillac CT6", "$32,499", 8, "B", "C", "A-", "B-", "B", "B", 50],
-        ["chrysler-200.png", "Chrysler 200", "$28,450", 9, "B-", "B", "B-", "C", "C", "C", 50]
+        ["chrysler-200.png", "Chrysler 200", "$28,450", 9, "B-", "B", "B-", "C", "C", "C", 50, 28],
+        ["buick-lacrosse.png", "Buick Lacrosse", "$28,999", 5, "B", "B-", "B", "A-", "B", "A", 50, 35],
+        ["bmw-3.png", "BMW 328i", "$52,450", 1, "A", "A", "A-", "A-", "B", "A", 50, 42],
+        ["bmw-5.png", "BMW 528i", "$54,950", 2, "A", "A", "A-", "A", "A", "A", 50, 18],        
+        ["dodge-charger.png", "Dodge Charger", "$22,450", 11, "C-", "B", "B-", "B-", "B", "B-", 50, 25],
+        ["buick-regal.png", "Buick Regal", "$32,999", 6, "C-", "C", "A-", "C-", "C", "B", 50, 26],
+        ["bmw-i3.png", "BMW i3", "$32,000", 4, "A-", "B", "A", "A-", "B", "A", 50, 27], 
+        ["cadillac-ats.png", "Cadillac ATS", "$29,950", 7, "C", "A", "C", "A-", "C", "A", 50, 28],
+        ["cadillac-ct6.png", "Cadillac CT6", "$32,499", 8, "B", "C", "B-", "B-", "", "B", 50, 29]
     ];
 
     var suv_car_list = [
-        ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-", 50],
-        ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A", 50],
-        ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-", 50]
+        ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-", 50, 18],
+        ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A", 50, 22],
+        ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-", 50, 23]
     ];
     
     //terrible coding practice, but this is for a deadline
@@ -76,10 +76,36 @@ $(document).ready(function () {
         card_panel += "<div class='car-price'>" + car_array[2] + "</div>";
         card_panel += "<div class='car-info'>";
 
-        card_panel += "<div class='panel-selection mpg-panel'>" + "mileage: " + "<span class='panel-inject-1'>45</span> </div>";
-        card_panel += "<div class='panel-selection safety-panel'> safety: <span class='panel-inject-2'>A+</span> </div>";
-        card_panel += "<div class='panel-selection comfort-panel'> comfort: <span class='panel-inject-3'>A-</span> </div>";
+        card_panel += "<div class='panel-selection mpg-panel'>" + "Mileage: " + "<span";
+        if (car_array[11] >= 28) {
+            card_panel += " class='green-review'";
+        } else if (car_array[11] > 22 && car_array[11] < 28) {
+            card_panel += " class='orange-review'";
+        } else if (car_array[11] < 22) {
+            card_panel += " class='red-review'";
+        }
+        card_panel += ">" + car_array[11] + " MPG</span> </div>";
         
+        card_panel += "<div class='panel-selection safety-panel'> Safety: <span";
+        if (car_array[5] === "A" || car_array[5] === "A-") {
+            card_panel += " class='green-review'";
+        } else if (car_array[5] === "B" || car_array[5] === "B-") {
+            card_panel += " class='orange-review'";
+        } else if (car_array[5] === "C" || car_array[5] === "C-") {
+            card_panel += " class='red-review'";
+        }
+        card_panel += ">" + car_array[5] + "</span> </div>";
+
+        card_panel += "<div class='panel-selection comfort-panel'> Comfort: <span";
+        if (car_array[6] === "A" || car_array[6] === "A-") {
+            card_panel += " class='green-review'";
+        } else if (car_array[6] === "B" || car_array[6] === "B-") {
+            card_panel += " class='orange-review'";
+        } else if (car_array[6] === "C" || car_array[6] === "C-") {
+            card_panel += " class='red-review'";
+        }
+        card_panel += ">" + car_array[6] + "</span> </div>";
+
         card_panel += "</div></div>";
 
         card_panel += "<div class='car-panel-right'>";
