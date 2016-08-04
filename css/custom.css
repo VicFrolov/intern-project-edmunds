@@ -536,6 +536,15 @@ html, body {
 }
 
 
+.winner {
+    display: block;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    
+}
+
 /* navbar */
 
 #logo {

@@ -200,6 +200,10 @@ $(document).ready(function () {
             if ($(this).parent().parent().find(".car-make").text() === "BMW i3" && currentValue < 40) {
                 delta = Math.abs(delta)
             }
+
+            if ($(this).parent().parent().find(".car-make").text() === "BMW i3" && delta < 0) {
+                delta = Math.round(delta /4)
+            }
             //make sure it doesn't go over 100
             if (currentValue + delta > 100) {
                 $(this).html(100 + "%")
