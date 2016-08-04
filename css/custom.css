@@ -5,6 +5,10 @@ html, body {
     padding: 0px;
 }
 
+#shell h3 {
+    color: #007EE5;
+}
+
 
 ::-webkit-scrollbar { 
     display: none; 
@@ -238,6 +242,7 @@ html, body {
   display: inline-block;
   margin-top: 20px;
   margin-left: 20px;
+  text-align: left;
 }
 
 .rs-control .rs-range-color {
@@ -249,7 +254,37 @@ html, body {
 }
 
 #payment-sliders {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+}
 
+#payment-type {
+    font-style: bold;
+    font-size: 1.5em;
+}
+
+.payments {
+    float:left;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 100px;
+    border: 5px solid rgba(200, 200, 200, 0.8);
+    border-radius: 5px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+.button-container {
+    width: 100%;
+    overflow: auto;
+    margin-top: 100px;
+}
+
+.button-container .btn {
+    margin-right: 30px;
+    margin-left: 30px;
 }
 /*end left slider section */
 
@@ -332,7 +367,6 @@ html, body {
     top: -25px;
     position: relative;
     font-size: 1.8em;
-    color: orange;
 }
 
 .match-suffix {
@@ -411,17 +445,19 @@ html, body {
     color: red;
 }
 
-.green-review {
-    color: green;
+.grey-review {
+    color: grey;
 }
 
 .orange-review {
     color: orange;
 }
 
-.grey-review {
-    color: grey;
+.green-review {
+    color: green;
 }
+
+
 
 #expand-button {
     max-height: 70%;

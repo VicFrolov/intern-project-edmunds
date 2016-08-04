@@ -60,17 +60,17 @@ $(document).ready(function () {
     //round slider
     $("#slider").roundSlider({
         sliderType: "range",
-        value: "20,40"
+        min: 0,
+        max: 50000,
+        value: "15000,32000"
     });
 
     $("#slider2").roundSlider({
         sliderType: "range",
-        value: "30,60"
-    });
-
-    $("#slider3").roundSlider({
-        sliderType: "range",
-        value: "40,80"
+        value: "30,60",
+        min: 0,
+        max: 2000,
+        value: "150, 700"
     });
     
    

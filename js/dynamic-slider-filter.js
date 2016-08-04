@@ -189,6 +189,40 @@ $(document).ready(function () {
     });    
 
 
+    $(".match-adjust").click(function () {
+
+        $(".match-percent").each(function() {
+            var currentValue = parseFloat($(this).text());
+            var delta = Math.floor(Math.random() * 14) + 1;
+            delta *= Math.floor(Math.random() * 2) + 1 == 1 ? 1 : -1;
+
+            //if it's the bmw i3 model we're testing, we don't want it to go down in rank
+            if ($(this).parent().parent().find(".car-make").text() === "BMW i3") {
+                delta = Math.abs(delta)
+            }
+
+            console.log(currentValue + delta)
+            //make sure it doesn't go over 100
+            if (currentValue + delta > 100) {
+                $(this).html(100 + "%")
+            } else if (currentValue + delta >= 80) {
+                $(this).html(delta + currentValue + "%");
+                $(this).addClass("green-review");
+            } else if (currentValue + delta > 50 && currentValue + delta < 80) {
+                $(this).html(delta + currentValue + "%");
+                $(this).addClass("orange-review");
+            } else if (currentValue + delta < 50) {
+                $(this).html(delta + currentValue + "%");
+                $(this).addClass("red-review");
+            }
+
+            if (currentValue + delta < 10) {
+                $(this).parent().parent().fadeOut(500);
+            }
+            
+        });
+    })
+
 
 
 });
