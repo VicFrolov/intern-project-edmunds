@@ -15,7 +15,16 @@ $(document).ready(function () {
         ["cadillac-srx.png", "Cadillac SRX", "$37,695", 6, "B", "B", "B+", "A-", "B+", "A-", 50],
         ["bmw-x6.png", "BMW X6", "$60,600", 1, "A", "A", "A-", "A", "A", "A", 50],
         ["cadillac-xt5.png", "Cadillac XT5", "$42,125", 7, "B-", "A-", "B+", "B+", "B+", "A-", 50]
-    ];    
+    ];
+    
+    //terrible coding practice, but this is for a deadline
+    var car_extra_one = [
+        "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>A</li> <li>A</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>B</li> <li>A</li> <li>16%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>B</li> <li>A</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>22 combined MPG</li> <li>3.5L 6-cylinder</li> <li>9 Speed Automatic</li> <li>Front Wheel Drive</li> <li>Basic 4 year warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/' class='waves-effect waves-light btn read-more-button'>Read More</a> </div>",
+        "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>B</li> <li>C</li> <li>B</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>B</li> <li>C</li> <li>19%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>B</li> <li>B</li> <li>A</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>26 combined MPG</li> <li>2.0L 4-cylinder</li> <li>6 Speed Automatic</li> <li>Front Wheel Drive</li> <li>2 year warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/' class='waves-effect waves-light btn read-more-button'>Read More</a> </div>",
+        "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>D</li> <li>A</li> <li>C</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>B</li> <li>B</li> <li>B</li> <li>17%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>C</li> <li>B</li> <li>B</li> <li>C</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>26 combined MPG</li> <li>1.8L 4-cylinder Hybrid</li> <li>2 Speed Automatic</li> <li>Front Wheel Drive</li> <li>2 year limited warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/' class='waves-effect waves-light btn read-more-button'>Read More</a> </div>",
+        "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>D</li> <li>B</li> <li>B</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>B</li> <li>C</li> <li>A</li> <li>11%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>B</li> <li>B</li> <li>A</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>18 combined MPG</li> <li>4.8L 8-cylinder</li> <li>6 Speed Manual</li> <li>Rear Wheel Drive</li> <li>no warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/'class='waves-effect waves-light btn read-more-button'>Read More</a> </div>",
+        "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>C</li> <li>B</li> <li>C</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>A</li> <li>B</li> <li>20%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>A</li> <li>A</li> <li>A</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>22 combined MPG</li> <li>4.8L 8-cylinder supercharged</li> <li>6 Speed Automatic</li> <li>All Wheel Drive</li> <li>4 year warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/' class='waves-effect waves-light btn read-more-button'>Read More</a> </div>"
+    ];
 
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
@@ -76,7 +85,12 @@ $(document).ready(function () {
         card_panel += "<p class='edmunds-rating'>" +  car_array[4] + "</p>";
         card_panel += "<div class='blurb-suffix'> Our take:" + "<div class='blurb'> " + 
             "This car drives like it looks, Amazing. The interior has a brand new (...)";
-        card_panel += "</div></div></div></div>"
+        card_panel += "</div></div></div>"
+
+        //extra panels
+        card_panel += car_extra_one[4];
+
+        card_panel += "</div>"
 
         fade_delay += 100;
         $(card_panel).hide().delay(fade_delay).appendTo("#car-panel-list").fadeIn(3000);
@@ -116,13 +130,10 @@ $(document).ready(function () {
             $("#car-panel").animate({
                 width: "98%"
             }, 350);
-            setTimeout(function(){
-                $(".car-panel-card").animate({
-                    width: "100%"
-                }, 150); 
-            }, 150);
-
-            
+            $(".car-panel-card").animate({
+                width: "100%"
+            }, 150);             
+            $(".car-panel-extra").css("display", "block");
         } else {
             $("#gallery").animate({
                 width: "67%"
@@ -132,8 +143,12 @@ $(document).ready(function () {
             }, 350);
             $(".car-panel-card").animate({
                 width: "100%"
-            }, 350);             
+            }, 350);     
+            $(".car-panel-extra").css("display", "none");
         }
-    });
+    });    
+
+
+
 
 });
