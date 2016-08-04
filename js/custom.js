@@ -37,6 +37,26 @@ $(document).ready(function () {
         $(this).toggleClass("clicked");
     });
 
+    // button hovers change background
+
+
+    // display or hide important topics
+
+    $("#gas-mileage-button").click(function () {
+        console.log("test")
+        $(".mpg-panel").css("visibility", "visible").hide().fadeIn(1000);
+    });
+
+    $("#comfort-button").click(function () {
+        console.log("test")
+        $(".comfort-panel").css("visibility", "visible").hide().fadeIn(1000);
+    });
+
+    $("#safety-button").click(function () {
+        console.log("test")
+        $(".safety-panel").css("visibility", "visible").hide().fadeIn(1000);
+    });       
+
     //round slider
     $("#slider").roundSlider({
         sliderType: "range",
