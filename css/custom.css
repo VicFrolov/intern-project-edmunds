@@ -367,6 +367,7 @@ html, body {
     top: -25px;
     position: relative;
     font-size: 1.8em;
+    color: rgba(200, 200, 200, 0.8);
 }
 
 .match-suffix {
