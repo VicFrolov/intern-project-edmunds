@@ -6,7 +6,7 @@ $(document).ready(function () {
         ["bmw-5.png", "BMW 528i", "$54,950", 2, "A", "A", "A-", "A", "A", "A", 50, 18],        
         ["dodge-charger.png", "Dodge Charger", "$22,450", 11, "C-", "B", "B-", "B-", "B", "B-", 50, 25],
         ["buick-regal.png", "Buick Regal", "$32,999", 6, "C-", "C", "A-", "C-", "C", "B", 50, 26],
-        ["bmw-i3.png", "BMW i3", "$32,000", 4, "A-", "B", "A", "A-", "B", "A", 50, 27], 
+        ["bmw-i3.png", "BMW i3", "$32,000", 4, "A-", "B", "A", "A-", "B", "A", 50, 33], 
         ["cadillac-ats.png", "Cadillac ATS", "$29,950", 7, "C", "A", "C", "A-", "C", "A", 50, 28],
         ["cadillac-ct6.png", "Cadillac CT6", "$32,499", 8, "B", "C", "B-", "B-", "", "B", 50, 29]
     ];
@@ -110,7 +110,17 @@ $(document).ready(function () {
 
         card_panel += "<div class='car-panel-right'>";
         card_panel += "<p class='edmunds-rating-suffix'>Edmund's Rating:</p>";
-        card_panel += "<p class='edmunds-rating'>" +  car_array[4] + "</p>";
+        
+        card_panel += "<p class='edmunds-rating";
+        if (car_array[4] === "A" || car_array[4] === "A-") {
+            card_panel += " green-review'";
+        } else if (car_array[4] === "B" || car_array[4] === "B-") {
+            card_panel += " orange-review'";
+        } else if (car_array[4] === "C" || car_array[4] === "C-") {
+            card_panel += " red-review'";
+        }
+        card_panel += "'>" +  car_array[4] + "</p>";
+        
         card_panel += "<div class='blurb-suffix'> Our take:" + "<div class='blurb'> " + 
             "This car drives like it looks, Amazing. The interior has a brand new (...)";
         card_panel += "</div></div></div>"
