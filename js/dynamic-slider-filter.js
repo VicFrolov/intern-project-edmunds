@@ -26,6 +26,8 @@ $(document).ready(function () {
         "<div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Driving Experience:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Acceleration</li> <li>MPG</li> <li>Handle</li> <li>Turn Radius</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>C</li> <li>B</li> <li>C</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Safety:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Driver</li> <li>Passenger</li> <li>Side Pole Rating</li> <li>Risk of Rollover </li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>A</li> <li>B</li> <li>20%</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <div class='expanded-table'> <div class='expanded-table-text'> <ul> <li>Leg Room</li> <li>Head Room</li> <li>Shoulder Room</li> <li>Seat comfort</li> </ul> </div> <div class='expanded-table-data'> <ul> <li>A</li> <li>A</li> <li>A</li> <li>A</li> </ul> </div> </div> </div> <div class='car-panel-extra'> <p class='edmunds-rating-suffix-expanded'>Comfort:</p> <ul class='car-details'> <li>22 combined MPG</li> <li>4.8L 8-cylinder supercharged</li> <li>6 Speed Automatic</li> <li>All Wheel Drive</li> <li>4 year warranty</li> </ul> <a href='http://www.edmunds.com/bmw/i3/2016/' class='waves-effect waves-light btn read-more-button'>Read More</a> </div>"
     ];
 
+    var car_extra_index = 0;
+
     $("#sedan-button").click(function () {
         $("#car-panel-info-text").remove();
         $("#car-panel-topbar").remove();
@@ -88,7 +90,9 @@ $(document).ready(function () {
         card_panel += "</div></div></div>"
 
         //extra panels
-        card_panel += car_extra_one[4];
+        car_extra_index = car_extra_index === 5 ? 0 : car_extra_index;
+        card_panel += car_extra_one[car_extra_index];
+        car_extra_index += 1;
 
         card_panel += "</div>"
 
