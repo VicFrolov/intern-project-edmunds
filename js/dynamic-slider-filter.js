@@ -197,7 +197,7 @@ $(document).ready(function () {
             delta *= Math.floor(Math.random() * 2) + 1 == 1 ? 1 : -1;
 
             //if it's the bmw i3 model we're testing, we don't want it to go down in rank
-            if ($(this).parent().parent().find(".car-make").text() === "BMW i3") {
+            if ($(this).parent().parent().find(".car-make").text() === "BMW i3" && currentValue < 40) {
                 delta = Math.abs(delta)
             }
             //make sure it doesn't go over 100
