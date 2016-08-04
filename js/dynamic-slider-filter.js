@@ -204,6 +204,18 @@ $(document).ready(function () {
     });    
 
 
+    
+    $(".match-adjust-final-demo").click(function () {
+        $(".match-percent").each(function() {
+            if ($(this).parent().parent().find(".car-make").text() === "BMW i3") {
+                $(this).html(99 + "%");
+                $(this).addClass("green-review");
+            }
+        });
+    });
+        
+
+
     $(".match-adjust").click(function () {
 
         $(".match-percent").each(function() {
@@ -216,21 +228,25 @@ $(document).ready(function () {
                 delta = Math.abs(delta)
             }
 
-            if ($(this).parent().parent().find(".car-make").text() === "BMW i3" && delta < 0) {
-                delta = Math.round(delta /4)
-            }
+
             //make sure it doesn't go over 100
-            if (currentValue + delta > 100) {
-                $(this).html(100 + "%")
+            if (currentValue + delta >= 100) {
+                $(this).html(99 + "%")
             } else if (currentValue + delta >= 80) {
                 $(this).html(delta + currentValue + "%");
                 $(this).addClass("green-review");
+                $(this).removeClass("red-review");
+                $(this).removeClass("orange-review");
             } else if (currentValue + delta > 50 && currentValue + delta < 80) {
                 $(this).html(delta + currentValue + "%");
                 $(this).addClass("orange-review");
+                $(this).removeClass("green-review");
+                $(this).removeClass("red-review");
             } else if (currentValue + delta < 50) {
                 $(this).html(delta + currentValue + "%");
                 $(this).addClass("red-review");
+                $(this).removeClass("green-review");
+                $(this).removeClass("orange-review");
             }
 
             if (currentValue + delta < 10) {
@@ -250,6 +266,16 @@ $('.match-adjust').on('click', function () {
     });
 
     $("#car-panel-list").html(numericallyOrderedDivs);
+});
+
+$('.match-adjust-final-demo').on('click', function () {
+    var $divs = $(".car-panel-card");
+    var numericallyOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find(".match-percent").text() < $(b).find(".match-percent").text();
+});
+
+    $("#car-panel-list").html(numericallyOrderedDivs);
+
 });
 
 
